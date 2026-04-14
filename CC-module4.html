@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 4 – Technology & Tools | Path to College</title>
+<style>
+*{box-sizing:border-box;}
+body{margin:0;font-family:Arial,sans-serif;background:#f4f4f4;color:#222;}
+.container{max-width:900px;margin:auto;padding:40px 20px;}
+.header{background:white;padding:35px;border-radius:16px;text-align:center;box-shadow:0 4px 10px rgba(0,0,0,0.08);margin-bottom:10px;border-top:6px solid #c8102e;}
+.header h1{margin:0;font-size:32px;color:#c8102e;}
+.header p{margin-top:10px;font-size:17px;color:#555;}
+.breadcrumb{font-size:13px;color:#888;margin-bottom:25px;padding:0 4px;}
+.breadcrumb a{color:#c8102e;text-decoration:none;}
+.breadcrumb a:hover{text-decoration:underline;}
+.progress-wrap{background:white;border-radius:12px;padding:20px 25px;box-shadow:0 4px 10px rgba(0,0,0,0.08);margin-bottom:25px;}
+.progress-label{display:flex;justify-content:space-between;font-size:13px;color:#666;margin-bottom:8px;}
+.progress-label span{font-weight:bold;color:#c8102e;}
+.progress-bar-bg{background:#f0f0f0;border-radius:50px;height:10px;overflow:hidden;}
+.progress-bar-fill{background:#c8102e;height:100%;width:40.6%;border-radius:50px;}
+.content-card{background:white;border-radius:16px;box-shadow:0 5px 12px rgba(0,0,0,0.08);overflow:hidden;margin-bottom:25px;}
+.content-card-header{background:#c8102e;color:white;padding:20px 30px;}
+.content-card-header h2{margin:0;font-size:20px;}
+.content-card-header p{margin:6px 0 0;font-size:14px;opacity:0.85;}
+.content-card-body{padding:30px;}
+.intro-text{font-size:15.5px;line-height:1.8;color:#333;margin-bottom:28px;padding-bottom:22px;border-bottom:2px solid #f0f0f0;}
+/* Browser alert */
+.browser-alert{background:#fef2f2;border:2px solid #c8102e;border-radius:10px;padding:14px 18px;margin-bottom:24px;display:flex;gap:12px;align-items:center;}
+.browser-alert .icon{font-size:22px;flex-shrink:0;}
+.browser-alert p{font-size:14.5px;color:#333;margin:0;line-height:1.6;}
+/* Platform overview grid */
+.platform-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px;}
+.platform-card{background:#f9f9f9;border-radius:10px;padding:16px;border:1.5px solid #e8e8e8;text-align:center;}
+.platform-card .p-icon{font-size:28px;margin-bottom:8px;}
+.platform-card h4{font-size:14px;color:#c8102e;margin:0 0 6px;}
+.platform-card p{font-size:12.5px;color:#666;margin:0;line-height:1.5;}
+/* Deep dive sections */
+.section-block{margin-bottom:32px;}
+.section-divider{background:#c8102e;color:white;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:bold;margin-bottom:16px;}
+.section-block h3{font-size:16px;color:#c8102e;margin:0 0 12px;padding-bottom:6px;border-bottom:2px solid #f0f0f0;}
+.section-block h4{font-size:14.5px;color:#333;margin:14px 0 8px;font-weight:bold;}
+.section-block p{font-size:15px;color:#444;line-height:1.7;margin:0 0 10px;}
+.section-block ul{margin:0 0 10px;padding-left:20px;}
+.section-block ul li{font-size:14.5px;color:#444;margin-bottom:8px;line-height:1.6;}
+/* Video link row */
+.video-links{display:flex;flex-direction:column;gap:8px;margin:12px 0;}
+.video-link-item{display:flex;align-items:center;gap:10px;background:#f9f9f9;border-radius:8px;padding:10px 14px;border:1.5px solid #e8e8e8;}
+.video-link-item .v-icon{color:#c8102e;font-size:16px;flex-shrink:0;}
+.video-link-item a{color:#c8102e;text-decoration:none;font-size:14px;font-weight:bold;}
+.video-link-item a:hover{text-decoration:underline;}
+/* Activity box */
+.activity-box{background:#fff8f8;border:2px solid #c8102e;border-radius:10px;padding:18px 22px;margin:16px 0;display:flex;gap:14px;align-items:flex-start;}
+.activity-icon{font-size:22px;flex-shrink:0;margin-top:2px;}
+.activity-content p{font-size:14.5px;color:#333;margin:0 0 12px;line-height:1.6;}
+.activity-content p:last-child{margin-bottom:0;}
+.activity-btn{display:inline-block;background:#c8102e;color:white;text-decoration:none;padding:9px 18px;border-radius:7px;font-size:13px;font-weight:bold;transition:background 0.2s;margin-right:8px;margin-bottom:6px;}
+.activity-btn:hover{background:#9e0d23;}
+/* Cyber section */
+.cyber-box{background:#1a1a2e;color:white;border-radius:12px;padding:24px;margin:20px 0;}
+.cyber-box h4{color:#f87171;margin:0 0 10px;font-size:16px;}
+.cyber-box p{font-size:14px;color:#ddd;line-height:1.7;margin:0 0 12px;}
+.cyber-box ul{padding-left:18px;margin:0;}
+.cyber-box ul li{font-size:13.5px;color:#ddd;margin-bottom:6px;line-height:1.5;}
+.cyber-step{display:flex;gap:10px;margin-bottom:10px;align-items:flex-start;}
+.cyber-step .label{background:#c8102e;color:white;font-size:11px;font-weight:bold;padding:2px 8px;border-radius:4px;white-space:nowrap;margin-top:2px;}
+.cyber-step p{font-size:13.5px;color:#ddd;margin:0;line-height:1.5;}
+/* Pay info */
+.pay-note{background:#f0fdf4;border-left:4px solid #16a34a;border-radius:0 8px 8px 0;padding:14px 18px;margin:12px 0;font-size:14.5px;color:#333;line-height:1.6;}
+/* Ack box */
+.ack-box{background:white;border-radius:16px;box-shadow:0 5px 12px rgba(0,0,0,0.08);padding:30px;margin-bottom:25px;border-top:4px solid #222;}
+.ack-box h3{margin:0 0 10px;font-size:17px;color:#222;}
+.ack-box p{font-size:14.5px;color:#555;line-height:1.7;margin:0 0 20px;}
+.ack-steps{display:flex;flex-direction:column;gap:10px;margin-bottom:22px;}
+.ack-step{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:#444;}
+.ack-step .step-num{background:#222;color:white;width:22px;height:22px;border-radius:50%;font-size:11px;font-weight:bold;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.ack-btn{display:inline-block;background:#c8102e;color:white;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:15px;font-weight:bold;}
+.ack-btn:hover{background:#9e0d23;}
+.nav-row{display:flex;justify-content:space-between;align-items:center;gap:16px;}
+.nav-btn{display:inline-block;padding:12px 22px;border-radius:8px;font-size:14px;font-weight:bold;text-decoration:none;transition:0.2s;}
+.nav-btn-outline{border:2px solid #c8102e;color:#c8102e;background:white;}
+.nav-btn-outline:hover{background:#fff5f5;}
+.nav-btn-fill{background:#c8102e;color:white;border:2px solid #c8102e;}
+.nav-btn-fill:hover{background:#9e0d23;border-color:#9e0d23;}
+@media(max-width:700px){.platform-grid{grid-template-columns:repeat(2,1fr);}.header h1{font-size:24px;}.nav-row{flex-direction:column;}.nav-btn{width:100%;text-align:center;}}
+@media(max-width:500px){.platform-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>Path to College Learning Portal</h1>
+    <p>Employee Onboarding Program &mdash; Office of Operations</p>
+  </div>
+  <div class="breadcrumb"><a href="#">Home</a> &rsaquo; Module 4: Technology &amp; Tools</div>
+  <div class="progress-wrap">
+    <div class="progress-label"><span>Module 4 of 10</span><span>Technology &amp; Tools</span></div>
+    <div class="progress-bar-bg"><div class="progress-bar-fill"></div></div>
+  </div>
+
+  <div class="content-card">
+    <div class="content-card-header">
+      <h2>Module 4: Technology &amp; Tools</h2>
+      <p>Get familiar with the platforms and systems that power Path to College's daily operations.</p>
+    </div>
+    <div class="content-card-body">
+      <p class="intro-text">This module is designed to equip you with a comprehensive understanding of the technology systems and tools that power Path to College's daily operations. By the end of this module, you will be familiar with the key platforms we use, as well as best practices for maximizing efficiency, maintaining security, and fostering seamless collaboration across teams.</p>
+
+      <!-- Browser alert -->
+      <div class="browser-alert">
+        <div class="icon">🚨</div>
+        <p><strong>Important:</strong> To ensure optimal performance, use <strong>Google Chrome</strong> as your internet browser. Avoid using Safari, Firefox, or any other browsers.</p>
+      </div>
+
+      <!-- Platform overview -->
+      <div class="section-block">
+        <h3>Key Platforms &amp; Systems Overview</h3>
+        <div class="platform-grid">
+          <div class="platform-card"><div class="p-icon">🟠</div><h4>BambooHR</h4><p>Employee information, payroll, PTO, and training</p></div>
+          <div class="platform-card"><div class="p-icon">🔵</div><h4>Google Workspace</h4><p>Email, calendar, file storage, and collaboration</p></div>
+          <div class="platform-card"><div class="p-icon">🟣</div><h4>Salesforce</h4><p>CRM and donor relationship management</p></div>
+          <div class="platform-card"><div class="p-icon">🟡</div><h4>Airtable</h4><p>Data organization and program management</p></div>
+          <div class="platform-card"><div class="p-icon">🔑</div><h4>1Password</h4><p>Secure password storage and sharing</p></div>
+          <div class="platform-card"><div class="p-icon">📋</div><h4>Trello</h4><p>Project and task management</p></div>
+        </div>
+      </div>
+
+      <!-- BambooHR Deep Dive -->
+      <div class="section-divider">🟠 BambooHR — Employee Information Management</div>
+      <div class="section-block">
+        <p>BambooHR is a centralized platform for managing employee information and simplifying HR processes.</p>
+        <div class="activity-box">
+          <div class="activity-icon">💡</div>
+          <div class="activity-content">
+            <p><strong>Activity:</strong> Watch this short introduction video to BambooHR.</p>
+            <a class="activity-btn" href="https://www.bamboohr.com/video/tutorial-intro-bamboohr" target="_blank">Watch Intro Video &rarr;</a>
+          </div>
+        </div>
+        <h4>Time Tracking</h4>
+        <p>All exempt and nonexempt employees must keep an accurate and complete record of their attendance and hours worked. Time cards are official business records and may not be altered without your supervisor's approval.</p>
+        <div class="video-links">
+          <div class="video-link-item"><span class="v-icon">▶</span><a href="https://www.bamboohr.com/video/tutorial-clock-in-and-out" target="_blank">Clock In and Out</a></div>
+          <div class="video-link-item"><span class="v-icon">▶</span><a href="https://www.bamboohr.com/video/tutorial-enter-hours-worked" target="_blank">Enter Hours Worked</a></div>
+          <div class="video-link-item"><span class="v-icon">▶</span><a href="https://www.bamboohr.com/video/tutorial-save-to-timesheet" target="_blank">Save to Timesheet</a></div>
+          <div class="video-link-item"><span class="v-icon">▶</span><a href="https://www.bamboohr.com/video/tutorial-enter-time-worked" target="_blank">Enter Time Worked</a></div>
+        </div>
+        <h4>Payroll</h4>
+        <div class="pay-note"><strong>All regular full-time and part-time Path to College employees are paid on the 11th and 25th of each month.</strong> If the 11th or 25th falls on a holiday or weekend, employees will be paid on the prior business day.</div>
+        <div class="video-links">
+          <div class="video-link-item"><span class="v-icon">▶</span><a href="https://www.bamboohr.com/video/tutorial-payroll" target="_blank">Accessing Your Pay Information (Pay Info Tab)</a></div>
+          <div class="video-link-item"><span class="v-icon">▶</span><a href="https://www.bamboohr.com/video/tutorial-payroll-corrections" target="_blank">Performing a Paystub Audit</a></div>
+        </div>
+        <h4>Training Tab</h4>
+        <p>Your required Path to College training(s) will live within the Training Tab in BambooHR — your gateway to learning and growth.</p>
+        <div class="video-links">
+          <div class="video-link-item"><span class="v-icon">▶</span><a href="https://www.bamboohr.com/video/tutorial-training" target="_blank">How to Access and Complete Trainings</a></div>
+        </div>
+        <p style="font-size:13px;color:#888;font-style:italic;margin-top:10px;">* Once you have completed your 90-day probationary period, you will receive more information regarding your PTO and how to submit requests in BambooHR.</p>
+      </div>
+
+      <!-- Google Workspace Deep Dive -->
+      <div class="section-divider">🔵 Google Workspace — Email, Collaboration, &amp; File Management</div>
+      <div class="section-block">
+        <p>A suite of cloud-based productivity tools including Gmail, Google Drive, Google Docs, Google Sheets, Google Calendar, and Google Meet.</p>
+        <h4>Logging In</h4>
+        <ul>
+          <li>Open Google Chrome and <a href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2Fu%2F0%2F&emr=1&followup=https%3A%2F%2Fmail.google.com%2Fmail%2Fu%2F0%2F&service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin" target="_blank" style="color:#c8102e;">click here to go directly to Gmail.</a></li>
+          <li>Enter your Path to College email address (e.g. <em>yourname@pathtocollege.org</em>).</li>
+          <li>Enter your password (you should have received a setup email from Google).</li>
+          <li>Once logged in, access all apps by clicking the grid icon (9 dots) in the top-right corner.</li>
+        </ul>
+        <h4>Google Workspace Tutorial Videos</h4>
+        <div class="video-links">
+          <div class="video-link-item"><span class="v-icon">▶</span><a href="https://www.youtube.com/watch?v=Hm6yIdAM4q0" target="_blank">How to Use Gmail</a></div>
+          <div class="video-link-item"><span class="v-icon">▶</span><a href="https://www.youtube.com/watch?v=6dyCOXNLp8U" target="_blank">How to Use Google Calendar</a></div>
+          <div class="video-link-item"><span class="v-icon">▶</span><a href="https://www.youtube.com/watch?v=yZtPeWzgZec" target="_blank">How to Use Google Chat</a></div>
+          <div class="video-link-item"><span class="v-icon">▶</span><a href="https://www.youtube.com/watch?v=QKYs1xJHpr4" target="_blank">How to Use Google Shared Drive(s)</a></div>
+          <div class="video-link-item"><span class="v-icon">▶</span><a href="https://www.youtube.com/watch?v=IUX-WQsbKfc" target="_blank">How to Use Google Meet</a></div>
+          <div class="video-link-item"><span class="v-icon">▶</span><a href="https://www.youtube.com/watch?v=xv8RXzUMTng" target="_blank">How to Use Google Sheets</a></div>
+        </div>
+      </div>
+
+      <!-- Salesforce -->
+      <div class="section-divider">🟣 Salesforce — CRM &amp; Donor Management</div>
+      <div class="section-block">
+        <p>A customer relationship management (CRM) tool that helps Path to College track and manage interactions with donors, students, and volunteers. Key uses include tracking contacts, logging interactions, and pulling fundraising and program reports.</p>
+        <p><strong>Logging In:</strong> You will receive an automated email directly from Salesforce with your login credentials.</p>
+      </div>
+
+      <!-- Airtable -->
+      <div class="section-divider">🟡 Airtable — Data Management</div>
+      <div class="section-block">
+        <p>A centralized hub for organizing data related to students, events, donors, and more. Airtable combines the features of a spreadsheet with the power of a database to track, manage, and visualize information.</p>
+        <p><strong>Logging In:</strong> You will use 1Password to log into Path to College's shared Airtable account.</p>
+      </div>
+
+      <!-- 1Password -->
+      <div class="section-divider">🔑 1Password — Password Management</div>
+      <div class="section-block">
+        <p>A password manager that helps securely store and manage Path to College passwords for work-related accounts, reducing the risk of security breaches.</p>
+        <p><strong>Logging In:</strong> You will receive an email invitation from 1Password.</p>
+        <div class="activity-box">
+          <div class="activity-icon">💡</div>
+          <div class="activity-content">
+            <p><strong>Activity:</strong> Get your 1Password account up and running so you can seamlessly access Path to College's tech and software platforms.</p>
+            <a class="activity-btn" href="https://docs.google.com/document/d/14lqMQtmUQBJJlMLMYA6_o75DbdMWCBrLpDbZxn54SOM/edit?usp=sharing" target="_blank">Open 1Password Setup Guide &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trello -->
+      <div class="section-divider">📋 Trello — Project Management</div>
+      <div class="section-block">
+        <p>A visual tool for managing tasks, tracking project progress, and organizing team collaborations using boards, lists, and cards.</p>
+        <p><strong>Logging In:</strong> You will receive an automated email directly from Trello with your login credentials.</p>
+        <div class="activity-box">
+          <div class="activity-icon">💡</div>
+          <div class="activity-content">
+            <p><strong>Activity:</strong> Learn the basics of using Trello and getting organized!</p>
+            <a class="activity-btn" href="https://trello.com/guide/trello-101" target="_blank">Trello 101 Guide &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cybersecurity -->
+      <div class="section-block">
+        <h3>Cyber Incident Response Plan</h3>
+        <p>At Path to College, safeguarding our data and systems is a top priority. All employees must be familiar with our Cyber Incident Response Plan.</p>
+        <div class="activity-box">
+          <div class="activity-icon">💡</div>
+          <div class="activity-content">
+            <p><strong>Activity:</strong> Read Path to College's Cyber Incident Response Plan.</p>
+            <a class="activity-btn" href="https://drive.google.com/file/d/1H6sCnvcVwg8HlZIyiQswO4HGrKMzg7qa/view?usp=sharing" target="_blank">Read the Plan &rarr;</a>
+          </div>
+        </div>
+        <div class="cyber-box">
+          <h4>⚠️ Recognizing a Cyber Incident</h4>
+          <p>A cyber incident may include:</p>
+          <ul>
+            <li>A suspicious email requesting personal or company information.</li>
+            <li>Unauthorized access or login attempts on company accounts.</li>
+            <li>Loss or theft of company devices containing sensitive information.</li>
+            <li>Detection of malware, ransomware, or other security threats.</li>
+            <li>Accidental sharing or exposure of confidential data.</li>
+          </ul>
+          <p style="margin-top:16px;font-weight:bold;color:#fca5a5;">If you suspect a cyber incident, follow these steps:</p>
+          <div class="cyber-step"><span class="label">Stop &amp; Disconnect</span><p>If possible, disconnect the device from Wi-Fi to prevent further spread.</p></div>
+          <div class="cyber-step"><span class="label">Do Not Engage</span><p>Do NOT reply to suspicious emails, click unknown links, or download attachments from unverified sources.</p></div>
+          <div class="cyber-step"><span class="label">Report It</span><p>Immediately notify your Manager and follow the reporting guidelines within the Cyber Incident Response Plan.</p></div>
+        </div>
+        <div class="activity-box">
+          <div class="activity-icon">💡</div>
+          <div class="activity-content">
+            <p><strong>Activity:</strong> Test your understanding of our Cyber Incident Response Plan.</p>
+            <a class="activity-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSerWtMtN3Pm6sJe_CEWtqfteIIxfbq4euVsD4sQNwk45dGD8g/viewform?usp=preview" target="_blank">Take the Quiz &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Next Steps -->
+      <div class="section-block">
+        <h3>Next Steps</h3>
+        <ul>
+          <li>Complete <strong>Module 5: Nonprofit Fundamentals</strong> to learn about the fundamentals of working in a nonprofit organization.</li>
+          <li>Start logging into the platforms listed in this module and reach out to your manager if you have any questions.</li>
+          <li>As part of your onboarding, you will also complete the <strong>ESET Cybersecurity Awareness Training</strong> via BambooHR.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="ack-box">
+    <h3>Ready to Sign Your Acknowledgment?</h3>
+    <p>Once you have reviewed all content, watched all videos, and completed all 💡 activities on this page, return to BambooHR to sign your Module 4 acknowledgment.</p>
+    <div class="ack-steps">
+      <div class="ack-step"><div class="step-num">1</div><span>Complete all activities and watch all linked videos on this page.</span></div>
+      <div class="ack-step"><div class="step-num">2</div><span>Log in to BambooHR and navigate to your onboarding section.</span></div>
+      <div class="ack-step"><div class="step-num">3</div><span>Sign the Module 4 acknowledgment to confirm completion.</span></div>
+      <div class="ack-step"><div class="step-num">4</div><span>Return here and proceed to Module 5.</span></div>
+    </div>
+    <a class="ack-btn" href="https://pathtocollege.bamboohr.com/home" target="_blank">Go to BambooHR to Sign &rarr;</a>
+  </div>
+
+  <div class="nav-row">
+    <a class="nav-btn nav-btn-outline" href="https://sites.google.com/pathtocollege.org/ptc-onboarding/copy-of-module-3-cc">&larr; Module 3</a>
+    <a class="nav-btn nav-btn-fill" href="https://sites.google.com/pathtocollege.org/ptc-onboarding/copy-of-module-5-cc">Next: Module 5 &rarr;</a>
+  </div>
+</div>
+</body>
+</html>
