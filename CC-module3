@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 3 – Policies & Procedures | Path to College</title>
+<style>
+*{box-sizing:border-box;}
+body{margin:0;font-family:Arial,sans-serif;background:#f4f4f4;color:#222;}
+.container{max-width:900px;margin:auto;padding:40px 20px;}
+.header{background:white;padding:35px;border-radius:16px;text-align:center;box-shadow:0 4px 10px rgba(0,0,0,0.08);margin-bottom:10px;border-top:6px solid #c8102e;}
+.header h1{margin:0;font-size:32px;color:#c8102e;}
+.header p{margin-top:10px;font-size:17px;color:#555;}
+.breadcrumb{font-size:13px;color:#888;margin-bottom:25px;padding:0 4px;}
+.breadcrumb a{color:#c8102e;text-decoration:none;}
+.breadcrumb a:hover{text-decoration:underline;}
+.progress-wrap{background:white;border-radius:12px;padding:20px 25px;box-shadow:0 4px 10px rgba(0,0,0,0.08);margin-bottom:25px;}
+.progress-label{display:flex;justify-content:space-between;font-size:13px;color:#666;margin-bottom:8px;}
+.progress-label span{font-weight:bold;color:#c8102e;}
+.progress-bar-bg{background:#f0f0f0;border-radius:50px;height:10px;overflow:hidden;}
+.progress-bar-fill{background:#c8102e;height:100%;width:30.3%;border-radius:50px;}
+.content-card{background:white;border-radius:16px;box-shadow:0 5px 12px rgba(0,0,0,0.08);overflow:hidden;margin-bottom:25px;}
+.content-card-header{background:#c8102e;color:white;padding:20px 30px;}
+.content-card-header h2{margin:0;font-size:20px;}
+.content-card-header p{margin:6px 0 0;font-size:14px;opacity:0.85;}
+.content-card-body{padding:30px;}
+.intro-text{font-size:15.5px;line-height:1.8;color:#333;margin-bottom:28px;padding-bottom:22px;border-bottom:2px solid #f0f0f0;}
+.section-block{margin-bottom:28px;}
+.section-block h3{font-size:16px;color:#c8102e;margin:0 0 12px;padding-bottom:6px;border-bottom:2px solid #f0f0f0;}
+.section-block p{font-size:15px;color:#444;line-height:1.7;margin:0 0 10px;}
+.section-block ul{margin:0 0 10px;padding-left:20px;}
+.section-block ul li{font-size:15px;color:#444;margin-bottom:8px;line-height:1.6;}
+/* PTO table */
+.pto-table{width:100%;border-collapse:collapse;margin:12px 0;}
+.pto-table th{background:#c8102e;color:white;padding:10px 14px;font-size:13px;text-align:left;}
+.pto-table td{padding:10px 14px;font-size:14px;border-bottom:1px solid #f0f0f0;color:#444;}
+.pto-table tr:nth-child(even) td{background:#fafafa;}
+/* Holiday grid */
+.holiday-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px;}
+.holiday-pill{background:#f9f9f9;border:1.5px solid #e8e8e8;border-radius:7px;padding:8px 12px;font-size:13px;color:#444;text-align:center;}
+/* Dress note */
+.dress-note{background:#fffbf0;border-left:4px solid #f59e0b;border-radius:0 8px 8px 0;padding:14px 18px;margin:12px 0;font-size:14px;color:#555;line-height:1.6;}
+.dress-note strong{color:#333;}
+/* Activity box */
+.activity-box{background:#fff8f8;border:2px solid #c8102e;border-radius:10px;padding:18px 22px;margin:20px 0;display:flex;gap:14px;align-items:flex-start;}
+.activity-icon{font-size:22px;flex-shrink:0;margin-top:2px;}
+.activity-content p{font-size:14.5px;color:#333;margin:0 0 12px;line-height:1.6;}
+.activity-content p:last-child{margin-bottom:0;}
+.activity-btn{display:inline-block;background:#c8102e;color:white;text-decoration:none;padding:9px 18px;border-radius:7px;font-size:13px;font-weight:bold;transition:background 0.2s;}
+.activity-btn:hover{background:#9e0d23;}
+/* Ack box */
+.ack-box{background:white;border-radius:16px;box-shadow:0 5px 12px rgba(0,0,0,0.08);padding:30px;margin-bottom:25px;border-top:4px solid #222;}
+.ack-box h3{margin:0 0 10px;font-size:17px;color:#222;}
+.ack-box p{font-size:14.5px;color:#555;line-height:1.7;margin:0 0 20px;}
+.ack-steps{display:flex;flex-direction:column;gap:10px;margin-bottom:22px;}
+.ack-step{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:#444;}
+.ack-step .step-num{background:#222;color:white;width:22px;height:22px;border-radius:50%;font-size:11px;font-weight:bold;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.ack-btn{display:inline-block;background:#c8102e;color:white;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:15px;font-weight:bold;transition:background 0.2s;}
+.ack-btn:hover{background:#9e0d23;}
+.nav-row{display:flex;justify-content:space-between;align-items:center;gap:16px;}
+.nav-btn{display:inline-block;padding:12px 22px;border-radius:8px;font-size:14px;font-weight:bold;text-decoration:none;transition:0.2s;}
+.nav-btn-outline{border:2px solid #c8102e;color:#c8102e;background:white;}
+.nav-btn-outline:hover{background:#fff5f5;}
+.nav-btn-fill{background:#c8102e;color:white;border:2px solid #c8102e;}
+.nav-btn-fill:hover{background:#9e0d23;border-color:#9e0d23;}
+@media(max-width:600px){.holiday-grid{grid-template-columns:repeat(2,1fr);}.header h1{font-size:24px;}.nav-row{flex-direction:column;}.nav-btn{width:100%;text-align:center;}}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>Path to College Learning Portal</h1>
+    <p>Employee Onboarding Program &mdash; Office of Operations</p>
+  </div>
+  <div class="breadcrumb"><a href="#">Home</a> &rsaquo; Module 3: Policies &amp; Procedures</div>
+  <div class="progress-wrap">
+    <div class="progress-label"><span>Module 3 of 10</span><span>Policies &amp; Procedures</span></div>
+    <div class="progress-bar-bg"><div class="progress-bar-fill"></div></div>
+  </div>
+
+  <div class="content-card">
+    <div class="content-card-header">
+      <h2>Module 3: Policies &amp; Procedures</h2>
+      <p>Understand our workplace guidelines, expectations, and how we operate.</p>
+    </div>
+    <div class="content-card-body">
+      <p class="intro-text">Our policies and procedures are designed to create a safe, respectful, and productive work environment. This module outlines key workplace policies and expectations to help you understand how we operate and what's expected of you. By the end of this module, you'll feel confident navigating our organizational policies and equipped to work efficiently within our framework.</p>
+
+      <!-- Employee Handbook -->
+      <div class="activity-box">
+        <div class="activity-icon">💡</div>
+        <div class="activity-content">
+          <p><strong>Activity:</strong> Review the Path to College Employee Handbook before continuing through this module.</p>
+          <a class="activity-btn" href="https://drive.google.com/file/d/1JgDUIlDcfl0zHhCbPrAxi20_9YSRssEJ/view?usp=sharing" target="_blank">Open Employee Handbook &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Work Hours -->
+      <div class="section-block">
+        <h3>Work Hours &amp; Timekeeping</h3>
+        <p>Regular office hours are <strong>9:00 AM to 5:00 PM, Monday through Friday.</strong> Specific days and times may vary based on your role and Path to College's calendar.</p>
+        <p><strong>Timekeeping System: BambooHR</strong> &mdash; All exempt and nonexempt employees must log hours worked and PTO requests using BambooHR. You'll learn more in Module 4.</p>
+      </div>
+
+      <!-- PTO -->
+      <div class="section-block">
+        <h3>PTO (Paid Time Off) and Holidays</h3>
+        <p>Full-time, salaried employees receive paid time off according to the following accrual schedule:</p>
+        <table class="pto-table">
+          <thead><tr><th>Tenure</th><th>PTO Days</th></tr></thead>
+          <tbody>
+            <tr><td>After 90 days of employment</td><td>15 days</td></tr>
+            <tr><td>After 1 year of employment</td><td>20 days</td></tr>
+            <tr><td>After 2+ years of employment</td><td>25 days</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:13.5px;color:#888;font-style:italic;">PTO days do not roll over and there are no payouts for unused PTO.</p>
+        <p style="margin-top:16px;"><strong>Path to College Observed Holidays:</strong></p>
+        <div class="holiday-grid">
+          <div class="holiday-pill">New Year's Day</div>
+          <div class="holiday-pill">MLK Jr. Day</div>
+          <div class="holiday-pill">President's Day</div>
+          <div class="holiday-pill">Good Friday</div>
+          <div class="holiday-pill">Memorial Day</div>
+          <div class="holiday-pill">Juneteenth</div>
+          <div class="holiday-pill">Summer Break*</div>
+          <div class="holiday-pill">Labor Day</div>
+          <div class="holiday-pill">Thanksgiving Day</div>
+          <div class="holiday-pill">Day After Thanksgiving</div>
+          <div class="holiday-pill">Christmas Day</div>
+          <div class="holiday-pill">Winter Break*</div>
+        </div>
+        <p style="font-size:12.5px;color:#999;margin-top:8px;">* Summer Break: usually 5 days during the week of July 4th. Winter Break: usually 5 days between Christmas and New Year's. Exact dates TBD annually.</p>
+      </div>
+
+      <!-- Dress Code -->
+      <div class="section-block">
+        <h3>Dress Code</h3>
+        <p><strong>Smart Casual Attire:</strong> Employees should dress in business casual attire unless the day's activities require otherwise. Employees should always dress appropriately for the possibility of meeting mentors, donors, or business partners.</p>
+        <div class="activity-box" style="margin-top:0;">
+          <div class="activity-icon">💡</div>
+          <div class="activity-content">
+            <p><strong>Need inspiration?</strong> Check out the PTC Smart Casual Work Fashion Pinterest board.</p>
+            <a class="activity-btn" href="https://www.pinterest.com/csyllynn/ptc-smart-casual-work-fashion/?invite_code=2ad282ed620248c5a5d3889a40612128&sender=510103232702321082" target="_blank">View Pinterest Board &rarr;</a>
+          </div>
+        </div>
+        <p><strong>Athletic Wear:</strong> Fitness or athletic clothing is only permitted for specific tasks, such as outdoor service days or fitness events.</p>
+        <p style="font-weight:bold;margin-top:14px;">General Guidelines:</p>
+        <ul>
+          <li>Clothing must be neat, well-maintained, and free of holes, tears, or visible wear.</li>
+          <li>Clothing with offensive or inappropriate graphics, language, or designs is prohibited.</li>
+          <li>Attire should not be excessively revealing or inappropriate for a professional setting.</li>
+          <li>Styles associated with religious or cultural practices are fully respected and exempt from standard guidelines.</li>
+        </ul>
+      </div>
+
+      <!-- Activity: Policy quiz -->
+      <div class="activity-box">
+        <div class="activity-icon">💡</div>
+        <div class="activity-content">
+          <p><strong>Activity:</strong> Test your understanding of our key policies and procedures.</p>
+          <a class="activity-btn" href="https://docs.google.com/forms/d/e/1FAIpQLScYja8I96Lgur4axH1vxgmF9Ef6au9nGFuB5C7t5drPKqo-fw/viewform" target="_blank">Take the Quiz &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Next steps -->
+      <div class="section-block">
+        <h3>Next Steps</h3>
+        <ul>
+          <li>Familiarize yourself with our technology and tools in <strong>Module 4: Technology &amp; Tools.</strong></li>
+          <li>Bookmark any policies you'll refer to frequently in your role.</li>
+          <li>Reach out to your manager if you have questions about any policy or procedure.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="ack-box">
+    <h3>Ready to Sign Your Acknowledgment?</h3>
+    <p>Once you have fully reviewed all content on this page and completed all activities, return to BambooHR to sign your Module 3 acknowledgment.</p>
+    <div class="ack-steps">
+      <div class="ack-step"><div class="step-num">1</div><span>Read the Employee Handbook and complete the 💡 quiz activity.</span></div>
+      <div class="ack-step"><div class="step-num">2</div><span>Log in to BambooHR and navigate to your onboarding section.</span></div>
+      <div class="ack-step"><div class="step-num">3</div><span>Sign the Module 3 acknowledgment to confirm completion.</span></div>
+      <div class="ack-step"><div class="step-num">4</div><span>Return here and proceed to Module 4.</span></div>
+    </div>
+    <a class="ack-btn" href="https://pathtocollege.bamboohr.com/home" target="_blank">Go to BambooHR to Sign &rarr;</a>
+  </div>
+
+  <div class="nav-row">
+    <a class="nav-btn nav-btn-outline" href="https://sites.google.com/pathtocollege.org/ptc-onboarding/copy-of-module-2-cc">&larr; Module 2</a>
+    <a class="nav-btn nav-btn-fill" href="https://sites.google.com/pathtocollege.org/ptc-onboarding/copy-of-module-4-cc">Next: Module 4 &rarr;</a>
+  </div>
+</div>
+</body>
+</html>
