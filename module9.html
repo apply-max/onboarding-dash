@@ -18,7 +18,7 @@ body{margin:0;font-family:Arial,sans-serif;background:#f4f4f4;color:#222;}
 .progress-label{display:flex;justify-content:space-between;font-size:13px;color:#666;margin-bottom:8px;}
 .progress-label span{font-weight:bold;color:#c8102e;}
 .progress-bar-bg{background:#f0f0f0;border-radius:50px;height:10px;overflow:hidden;}
-.progress-bar-fill{background:#c8102e;height:100%;width:100%;border-radius:50px;}
+.progress-bar-fill{background:#c8102e;height:100%;width:85%;border-radius:50px;}
 .content-card{background:white;border-radius:16px;box-shadow:0 5px 12px rgba(0,0,0,0.08);overflow:hidden;margin-bottom:25px;}
 .content-card-header{background:#c8102e;color:white;padding:20px 30px;}
 .content-card-header h2{margin:0;font-size:20px;}
@@ -28,82 +28,164 @@ body{margin:0;font-family:Arial,sans-serif;background:#f4f4f4;color:#222;}
 .section-block{margin-bottom:28px;}
 .section-block h3{font-size:16px;color:#c8102e;margin:0 0 14px;padding-bottom:6px;border-bottom:2px solid #f0f0f0;}
 .section-block p{font-size:15px;color:#444;line-height:1.7;margin:0 0 10px;}
+/* Policy download card */
 .policy-card{background:#1a1a2e;color:white;border-radius:12px;padding:24px;margin-bottom:24px;display:flex;gap:20px;align-items:center;}
 .policy-card .doc-icon{font-size:40px;flex-shrink:0;}
 .policy-card-text{flex:1;}
 .policy-card-text h4{margin:0 0 6px;font-size:17px;color:white;}
 .policy-card-text p{margin:0 0 14px;font-size:14px;color:#bbb;line-height:1.5;}
-.policy-btn{display:inline-block;background:#c8102e;color:white;text-decoration:none;padding:10px 20px;border-radius:7px;font-size:13px;font-weight:bold;}
+.policy-btn{display:inline-block;background:#c8102e;color:white;text-decoration:none;padding:10px 20px;border-radius:7px;font-size:13px;font-weight:bold;transition:background 0.2s;}
+.policy-btn:hover{background:#9e0d23;}
+/* Appendix grid */
 .appendix-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:14px 0;}
-.appendix-item{background:#f9f9f9;border-radius:8px;padding:12px 14px;border-left:4px solid #c8102e;display:flex;gap:10px;}
+.appendix-item{background:#f9f9f9;border-radius:8px;padding:12px 14px;border-left:4px solid #c8102e;display:flex;gap:10px;align-items:flex-start;}
+.appendix-item .app-icon{font-size:18px;flex-shrink:0;}
+.appendix-item .app-text{font-size:13.5px;color:#444;line-height:1.4;}
+.appendix-item .app-text strong{color:#c8102e;display:block;font-size:12px;margin-bottom:2px;}
+/* Key principles */
 .principles-list{list-style:none;padding:0;margin:0;}
-.principles-list li{display:flex;gap:10px;font-size:14.5px;margin-bottom:10px;}
+.principles-list li{display:flex;gap:10px;font-size:14.5px;color:#444;margin-bottom:10px;align-items:flex-start;line-height:1.5;}
+.principles-list li .dot{color:#c8102e;font-size:18px;flex-shrink:0;margin-top:-2px;}
+/* Emergency contacts */
 .contact-box{background:#fff5f5;border:1.5px solid #c8102e;border-radius:10px;padding:16px 20px;margin:14px 0;}
+.contact-box p{font-size:14px;color:#333;margin:0 0 8px;line-height:1.6;}
+.contact-box p:last-child{margin:0;}
+.contact-box strong{color:#c8102e;}
+/* Data/passwords note */
+.data-note{background:#f9f9f9;border-radius:10px;padding:16px 18px;margin:14px 0;font-size:14px;color:#444;line-height:1.6;border-left:4px solid #6b7280;}
+/* Acknowledgment receipt box */
 .receipt-box{background:#fffbf0;border:2px solid #f59e0b;border-radius:12px;padding:20px 24px;margin:20px 0;}
+.receipt-box h4{font-size:15px;color:#92400e;margin:0 0 10px;}
+.receipt-box p{font-size:14px;color:#78350f;line-height:1.7;margin:0 0 6px;}
+.receipt-box p:last-child{margin:0;}
+/* Ack box */
 .ack-box{background:white;border-radius:16px;box-shadow:0 5px 12px rgba(0,0,0,0.08);padding:30px;margin-bottom:25px;border-top:4px solid #222;}
+.ack-box h3{margin:0 0 10px;font-size:17px;color:#222;}
+.ack-box p{font-size:14.5px;color:#555;line-height:1.7;margin:0 0 20px;}
 .ack-steps{display:flex;flex-direction:column;gap:10px;margin-bottom:22px;}
-.ack-step{display:flex;gap:12px;}
-.ack-btn{display:inline-block;background:#c8102e;color:white;text-decoration:none;padding:14px 28px;border-radius:8px;font-weight:bold;}
+.ack-step{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:#444;}
+.ack-step .step-num-sm{background:#222;color:white;width:22px;height:22px;border-radius:50%;font-size:11px;font-weight:bold;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.ack-btn{display:inline-block;background:#c8102e;color:white;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:15px;font-weight:bold;transition:background 0.2s;}
+.ack-btn:hover{background:#9e0d23;}
 .nav-row{display:flex;justify-content:space-between;align-items:center;gap:16px;}
-.nav-btn{padding:12px 22px;border-radius:8px;font-weight:bold;text-decoration:none;}
-.nav-btn-outline{border:2px solid #c8102e;color:#c8102e;}
+.nav-btn{display:inline-block;padding:12px 22px;border-radius:8px;font-size:14px;font-weight:bold;text-decoration:none;transition:0.2s;}
+.nav-btn-outline{border:2px solid #c8102e;color:#c8102e;background:white;}
+.nav-btn-outline:hover{background:#fff5f5;}
+.nav-btn-fill{background:#c8102e;color:white;border:2px solid #c8102e;}
+.nav-btn-fill:hover{background:#9e0d23;border-color:#9e0d23;}
+@media(max-width:600px){.appendix-grid{grid-template-columns:1fr;}.policy-card{flex-direction:column;}.header h1{font-size:24px;}.nav-row{flex-direction:column;}.nav-btn{width:100%;text-align:center;}}
 </style>
 </head>
 <body>
 <div class="container">
 
-<div class="header">
-<h1>Path to College Learning Portal</h1>
-<p>Employee Onboarding Program &mdash; Office of Operations</p>
-</div>
+  <div class="header">
+    <h1>Path to College Learning Portal</h1>
+    <p>Employee Onboarding Program &mdash; Office of Operations</p>
+  </div>
 
-<div class="breadcrumb"><a href="#">Home</a> &rsaquo; Module 9: Disaster Preparedness &amp; Continuity Policy</div>
+  <div class="breadcrumb"><a href="#">Home</a> &rsaquo; Module 9: Disaster Preparedness &amp; Continuity Policy</div>
 
-<div class="progress-wrap">
-<div class="progress-label"><span>Module 9 of 9</span><span>Disaster Preparedness &amp; Continuity Policy</span></div>
-<div class="progress-bar-bg"><div class="progress-bar-fill"></div></div>
-</div>
+  <div class="progress-wrap">
+    <div class="progress-label"><span>Module 9 of 11</span><span>Disaster Preparedness &amp; Continuity Policy</span></div>
+    <div class="progress-bar-bg"><div class="progress-bar-fill"></div></div>
+  </div>
 
-<div class="content-card">
-<div class="content-card-header">
-<h2>Module 9: Disaster Preparedness &amp; Continuity Policy</h2>
-<p>Read the full policy, understand your role in an emergency, and sign your acknowledgment.</p>
-</div>
+  <div class="content-card">
+    <div class="content-card-header">
+      <h2>Module 9: Disaster Preparedness &amp; Continuity Policy</h2>
+      <p>Read the full policy, understand your role in an emergency, and sign your acknowledgment.</p>
+    </div>
+    <div class="content-card-body">
 
-<div class="content-card-body">
+      <p class="intro-text">This module covers Path to College's Disaster Preparedness &amp; Continuity Policy. This policy applies to <strong>all employees, management, contractors, interns, and volunteers.</strong> Path to College believes that individual life and safety take precedence in any emergency situation. Please read the full policy before signing your acknowledgment.</p>
 
-<p class="intro-text">This module covers Path to College's Disaster Preparedness &amp; Continuity Policy. This policy applies to <strong>all employees, management, contractors, interns, and volunteers.</strong> Path to College believes that individual life and safety take precedence in any emergency situation.</p>
+      <!-- Policy download -->
+      <div class="policy-card">
+        <div class="doc-icon">📋</div>
+        <div class="policy-card-text">
+          <h4>Disaster Preparedness &amp; Continuity Policy</h4>
+          <p>Read the full policy document before continuing. This includes all appendices covering emergency procedures for specific situations.</p>
+          <a class="policy-btn" href="https://drive.google.com/file/d/1H6sCnvcVwg8HlZIyiQswO4HGrKMzg7qa/view" target="_blank">Open Full Policy Document &rarr;</a>
+        </div>
+      </div>
 
-<div class="policy-card">
-<div class="doc-icon">📋</div>
-<div class="policy-card-text">
-<h4>Disaster Preparedness &amp; Continuity Policy</h4>
-<p>Read the full policy document before continuing.</p>
-<a class="policy-btn" href="https://drive.google.com/file/d/1H6sCnvcVwg8HlZIyiQswO4HGrKMzg7qa/view" target="_blank">Open Full Policy Document →</a>
-</div>
-</div>
+      <!-- Purpose -->
+      <div class="section-block">
+        <h3>Purpose</h3>
+        <p>This policy ensures that Path to College employees understand their roles in an emergency and that the organization can function successfully after an emergency has passed, returning quickly to normal operations. It applies to all employees and describes objectives and procedures for both preparation and actual emergency and disaster situations.</p>
+      </div>
 
-<!-- KEEPING REST OF YOUR CONTENT EXACTLY SAME -->
-<!-- (trimmed here only visually — your real version above stays unchanged) -->
+      <!-- Key principles -->
+      <div class="section-block">
+        <h3>Key Policies to Know</h3>
+        <ul class="principles-list">
+          <li><span class="dot">●</span><span><strong>Data Backup:</strong> All electronic files are backed up on Google Drive. Never store organization data on systems that are not backed up. Backups occur via cloud storage and physical media daily.</span></li>
+          <li><span class="dot">●</span><span><strong>Critical Passwords:</strong> A list of critical passwords is housed on the Trello platform.</span></li>
+          <li><span class="dot">●</span><span><strong>Physical Records:</strong> Important physical documents are stored in hazard-resistant containers. When possible, a scanned digital copy is maintained and backed up.</span></li>
+          <li><span class="dot">●</span><span><strong>Your Role:</strong> All employees are responsible for understanding their role in an emergency and responding in accordance with organization policies.</span></li>
+        </ul>
+      </div>
 
-</div>
-</div>
+      <!-- Emergency contacts -->
+      <div class="section-block">
+        <h3>Emergency Contacts</h3>
+        <div class="contact-box">
+          <p><strong>CPR / First Aid Trained Staff:</strong></p>
+          <p>Christine Sylvain — <strong>561-725-2531</strong></p>
+          <p style="margin-top:10px;"><strong>Fire Assembly Point:</strong> Meyer Amphitheater — walk east on Datura Street when leaving the office.</p>
+          <p><strong>Florida Power &amp; Light (power outages):</strong> 561-697-8000</p>
+        </div>
+      </div>
 
-<div class="ack-box">
-<h3>Final Step: Sign Your Acknowledgment</h3>
-<p>You’ve reached the final module. After reviewing the policy, sign your acknowledgment in BambooHR to complete onboarding.</p>
-<div class="ack-steps">
-<div class="ack-step"><span>1.</span><span>Read the full policy</span></div>
-<div class="ack-step"><span>2.</span><span>Go to BambooHR</span></div>
-<div class="ack-step"><span>3.</span><span>Sign acknowledgment</span></div>
-</div>
-<a class="ack-btn" href="https://pathtocollege.bamboohr.com/home" target="_blank">Complete Onboarding →</a>
-</div>
+      <!-- Appendices -->
+      <div class="section-block">
+        <h3>Emergency Procedure Appendices</h3>
+        <p style="font-size:14px;color:#555;margin-bottom:14px;">The full policy document includes detailed procedures for each of the following situations. You are expected to read all appendices.</p>
+        <div class="appendix-grid">
+          <div class="appendix-item"><div class="app-icon">🚑</div><div class="app-text"><strong>Appendix 1a</strong>Medical Emergencies</div></div>
+          <div class="appendix-item"><div class="app-icon">🔥</div><div class="app-text"><strong>Appendix 1b</strong>Fire Emergencies &amp; Building Evacuation</div></div>
+          <div class="appendix-item"><div class="app-icon">🚨</div><div class="app-text"><strong>Appendix 1c</strong>Active Shooter</div></div>
+          <div class="appendix-item"><div class="app-icon">📦</div><div class="app-text"><strong>Appendix 1d</strong>Handling Suspicious Packages</div></div>
+          <div class="appendix-item"><div class="app-icon">⚡</div><div class="app-text"><strong>Appendix 1e</strong>Extended Power Outage</div></div>
+          <div class="appendix-item"><div class="app-icon">🌀</div><div class="app-text"><strong>Appendix 1f</strong>Hurricane / Disaster</div></div>
+          <div class="appendix-item"><div class="app-icon">🌪️</div><div class="app-text"><strong>Appendix 1g</strong>Tornado</div></div>
+          <div class="appendix-item"><div class="app-icon">💣</div><div class="app-text"><strong>Appendix 1h</strong>Bomb Threats</div></div>
+          <div class="appendix-item"><div class="app-icon">🦠</div><div class="app-text"><strong>Appendix 1i</strong>Epidemics</div></div>
+          <div class="appendix-item"><div class="app-icon">⚠️</div><div class="app-text"><strong>Appendix 1j</strong>Workplace Threats / Violence</div></div>
+          <div class="appendix-item" style="grid-column:span 2;"><div class="app-icon">📢</div><div class="app-text"><strong>Appendix 1k</strong>Crisis Communications — All crises are reported to a supervisor and the President &amp; ED immediately. Only designated spokespeople may speak to the media.</div></div>
+        </div>
+      </div>
 
-<div class="nav-row">
-<a class="nav-btn nav-btn-outline" href="https://sites.google.com/pathtocollege.org/ptc-onboarding/module-8">&larr; Module 8</a>
-<span style="font-size:14px;color:#888;font-style:italic;">🎉 You've completed all onboarding modules!</span>
-</div>
+      <!-- Employee receipt -->
+      <div class="section-block">
+        <h3>Employee Acknowledgment</h3>
+        <div class="receipt-box">
+          <h4>Employee Receipt of Disaster Plan Manual</h4>
+          <p>By signing the acknowledgment in BambooHR, you confirm that:</p>
+          <p>✓ You have been advised of and have been given a copy of the Path to College Disaster Plan and related procedures.</p>
+          <p>✓ You understand that you are responsible for complying with all policies and procedures outlined in this document, with the understanding that individual life and safety takes precedence in any emergency situation.</p>
+          <p>✓ You have been given the opportunity to ask any questions about the application of these procedures to your work.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="ack-box">
+    <h3>Ready to Sign Your Acknowledgment?</h3>
+    <p>Once you have fully read the Disaster Preparedness &amp; Continuity Policy and all appendices, return to BambooHR to sign your Module 9 acknowledgment.</p>
+    <div class="ack-steps">
+      <div class="ack-step"><div class="step-num-sm">1</div><span>Read the full policy document including all appendices (Appendices 1a through 1k).</span></div>
+      <div class="ack-step"><div class="step-num-sm">2</div><span>Log in to BambooHR and navigate to your onboarding section.</span></div>
+      <div class="ack-step"><div class="step-num-sm">3</div><span>Sign the Module 9 acknowledgment to confirm you have read and understood the policy.</span></div>
+    </div>
+    <a class="ack-btn" href="https://pathtocollege.bamboohr.com/home" target="_blank">Go to BambooHR to Sign &rarr;</a>
+  </div>
+
+  <div class="nav-row">
+    <a class="nav-btn nav-btn-outline" href="https://sites.google.com/pathtocollege.org/ptc-onboarding/module-8">&larr; Module 8</a>
+    <a class="nav-btn nav-btn-fill" href="https://sites.google.com/pathtocollege.org/ptc-onboarding/module-10">Next: Module  10&rarr;</a>
 
 </div>
 </body>

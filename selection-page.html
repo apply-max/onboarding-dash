@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Navigation Page</title>
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #bf0410;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 40px 20px;
+}
+
+.welcomepage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 18px;
+  padding: 30px 40px;
+  width: 100%;
+  max-width: 700px;
+}
+
+.welcomepage h1 {
+  color: #bf0410;
+  font-size: 36px;
+  text-align: center;
+}
+
+.selection {
+  display: flex;
+  gap: 20px;
+  background-color: white;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  padding: 40px 50px;
+  width: 100%;
+  max-width: 700px;
+  flex-wrap: wrap;
+}
+
+.selection button {
+  background-color: #bf0410;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 14px 24px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.selection button:hover {
+  background-color: #8c0008;
+}
+
+a{
+    color: aliceblue;
+    text-decoration: none;
+}
+</style>
+</head>
+<body>
+
+<div class="welcomepage">
+  <h1> Welcome to Path to College!
+    Please select your role below.</h1>
+</div>
+
+<div class="selection">
+  <button> <a href="https://sites.google.com/pathtocollege.org/ptc-onboarding/module-pages-cc">College Coaches / Program Team</a></button>
+  <button> <a href="https://sites.google.com/pathtocollege.org/ptc-onboarding/Modules-pages1">All Other Staff</a></button>
+</div>
+</body>
+</html>
