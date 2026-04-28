@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 12 – Phishing Awareness | Path to College</title>
+<style>
+*{box-sizing:border-box;}
+body{margin:0;font-family:Arial,sans-serif;background:#f4f4f4;color:#222;}
+.container{max-width:900px;margin:auto;padding:40px 20px;}
+.header{background:white;padding:35px;border-radius:16px;text-align:center;box-shadow:0 4px 10px rgba(0,0,0,0.08);margin-bottom:10px;border-top:6px solid #c8102e;}
+.header h1{margin:0;font-size:32px;color:#c8102e;}
+.header p{margin-top:10px;font-size:17px;color:#555;}
+.breadcrumb{font-size:13px;color:#888;margin-bottom:25px;padding:0 4px;}
+.breadcrumb a{color:#c8102e;text-decoration:none;}
+.breadcrumb a:hover{text-decoration:underline;}
+.progress-wrap{background:white;border-radius:12px;padding:20px 25px;box-shadow:0 4px 10px rgba(0,0,0,0.08);margin-bottom:25px;}
+.progress-label{display:flex;justify-content:space-between;font-size:13px;color:#666;margin-bottom:8px;}
+.progress-label span{font-weight:bold;color:#c8102e;}
+.progress-bar-bg{background:#f0f0f0;border-radius:50px;height:10px;overflow:hidden;}
+.progress-bar-fill{background:#c8102e;height:100%;width:100%;border-radius:50px;}
+.content-card{background:white;border-radius:16px;box-shadow:0 5px 12px rgba(0,0,0,0.08);overflow:hidden;margin-bottom:25px;}
+.content-card-header{background:#c8102e;color:white;padding:20px 30px;}
+.content-card-header h2{margin:0;font-size:20px;}
+.content-card-header p{margin:6px 0 0;font-size:14px;opacity:0.85;}
+.content-card-body{padding:30px;}
+.intro-text{font-size:15.5px;line-height:1.8;color:#333;margin-bottom:28px;padding-bottom:22px;border-bottom:2px solid #f0f0f0;}
+.section-block{margin-bottom:32px;}
+.section-block h3{font-size:16px;color:#c8102e;margin:0 0 12px;padding-bottom:6px;border-bottom:2px solid #f0f0f0;}
+.section-block p{font-size:15px;color:#444;line-height:1.7;margin:0 0 10px;}
+.section-block ul{margin:0 0 10px;padding-left:20px;}
+.section-block ul li{font-size:14.5px;color:#444;margin-bottom:8px;line-height:1.6;}
+
+/* ── SLIDE VIEWER ── */
+.slide-viewer-wrap{background:#1e1e1e;border-radius:14px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,0.2);}
+.slide-viewer-bar{background:#2d2d2d;padding:10px 16px;display:flex;align-items:center;gap:8px;}
+.dot{width:12px;height:12px;border-radius:50%;display:inline-block;}
+.dot-red{background:#ff5f57;}
+.dot-yellow{background:#febc2e;}
+.dot-green{background:#28c840;}
+.bar-title{color:#888;font-size:12px;margin-left:8px;}
+.bar-count{margin-left:auto;color:#888;font-size:12px;}
+.slides-iframe{width:100%;height:480px;border:none;display:block;}
+.viewer-hint{text-align:center;font-size:12px;color:#aaa;margin:8px 0 0;}
+
+/* activity / ack */
+.activity-box{background:#fff8f8;border:2px solid #c8102e;border-radius:10px;padding:18px 22px;margin:16px 0;display:flex;gap:14px;align-items:flex-start;}
+.activity-icon{font-size:22px;flex-shrink:0;margin-top:2px;}
+.activity-content p{font-size:14.5px;color:#333;margin:0 0 12px;line-height:1.6;}
+.activity-content p:last-child{margin-bottom:0;}
+.activity-btn{display:inline-block;background:#c8102e;color:white;text-decoration:none;padding:9px 18px;border-radius:7px;font-size:13px;font-weight:bold;transition:background 0.2s;}
+.activity-btn:hover{background:#9e0d23;}
+.complete-badge{background:#f0fdf4;border:2px solid #86efac;border-radius:10px;padding:14px 20px;text-align:center;font-size:14.5px;color:#16a34a;font-weight:bold;margin-top:16px;}
+.ack-box{background:white;border-radius:16px;box-shadow:0 5px 12px rgba(0,0,0,0.08);padding:30px;margin-bottom:25px;border-top:4px solid #222;}
+.ack-box h3{margin:0 0 10px;font-size:17px;color:#222;}
+.ack-box p{font-size:14.5px;color:#555;line-height:1.7;margin:0 0 20px;}
+.ack-steps{display:flex;flex-direction:column;gap:10px;margin-bottom:22px;}
+.ack-step{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:#444;}
+.ack-step .step-num{background:#222;color:white;width:22px;height:22px;border-radius:50%;font-size:11px;font-weight:bold;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.ack-btn{display:inline-block;background:#c8102e;color:white;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:15px;font-weight:bold;}
+.ack-btn:hover{background:#9e0d23;}
+.nav-row{display:flex;justify-content:space-between;align-items:center;gap:16px;}
+.nav-btn{display:inline-block;padding:12px 22px;border-radius:8px;font-size:14px;font-weight:bold;text-decoration:none;transition:0.2s;}
+.nav-btn-outline{border:2px solid #c8102e;color:#c8102e;background:white;}
+.nav-btn-outline:hover{background:#fff5f5;}
+.nav-btn-fill{background:#c8102e;color:white;border:2px solid #c8102e;}
+.nav-btn-fill:hover{background:#9e0d23;border-color:#9e0d23;}
+@media(max-width:700px){.header h1{font-size:24px;}.nav-row{flex-direction:column;}.nav-btn{width:100%;text-align:center;}.slides-iframe{height:320px;}}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <h1>Path to College Learning Portal</h1>
+    <p>Employee Onboarding Program &mdash; Office of Operations</p>
+  </div>
+
+  <div class="breadcrumb">
+    <a href="#">Home</a> &rsaquo; Module 12: Phishing Awareness
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress-label"><span>Module 12 of 12</span><span>Phishing Awareness</span></div>
+    <div class="progress-bar-bg"><div class="progress-bar-fill"></div></div>
+  </div>
+
+  <div class="content-card">
+    <div class="content-card-header">
+      <h2>Module 12: Phishing Awareness</h2>
+      <p>Learn how to recognize, investigate, and report phishing and spear phishing attacks.</p>
+    </div>
+    <div class="content-card-body">
+
+      <p class="intro-text">Phishing is one of the most common ways attackers gain access to organizations — and it targets people, not just systems. This module walks you through how phishing attacks work, what red flags to look for, and exactly what to do if you suspect you've received one. Review all slides, then complete the acknowledgment form at the bottom.</p>
+
+      <!-- SLIDE VIEWER -->
+      <div class="section-block">
+        <h3>Training Slides</h3>
+        <div class="slide-viewer-wrap">
+          <div class="slide-viewer-bar">
+            <div class="dot dot-red"></div>
+            <div class="dot dot-yellow"></div>
+            <div class="dot dot-green"></div>
+            <span class="bar-title">Phishing Awareness — Path to College Fellowship</span>
+            <span class="bar-count">Use arrows inside to navigate &nbsp;·&nbsp; 12 slides</span>
+          </div>
+          <iframe
+            class="slides-iframe"
+            src="https://docs.google.com/presentation/d/1KFg7EulmQBLVucZmCYQdvroQFmQ6JXOzkYaZnPHc1eA/embed?start=false&loop=false&delayms=0"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <p class="viewer-hint">Use the arrow buttons inside the slides to navigate &nbsp;·&nbsp; Click the expand icon for fullscreen</p>
+      </div>
+
+      <!-- Key Takeaways -->
+      <div class="section-block">
+        <h3>Key Takeaways</h3>
+        <ul>
+          <li>Phishing targets many people broadly; spear phishing targets specific individuals with higher stakes.</li>
+          <li>Attackers research their targets before striking — familiarity does not mean legitimacy.</li>
+          <li>Red flags include urgency, credential requests, payment requests, and identity inconsistencies.</li>
+          <li>Always pause and verify independently before acting on any unexpected request.</li>
+          <li>If you suspect a scam: stop, document, report to Maria at maria@pathtocollege.org, and protect yourself.</li>
+        </ul>
+      </div>
+
+      <!-- Next Steps -->
+      <div class="section-block">
+        <h3>Next Steps</h3>
+          <li>Complete <strong>Module 13</strong> to finish your onboarding.</li>
+          <li>If you receive a suspicious email or call at any time, report it immediately to <strong>maria@pathtocollege.org</strong>.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="ack-box">
+    <h3>Ready to Sign Your Acknowledgment?</h3>
+    <p>Once you have reviewed all slides on this page, complete the Google Form to confirm your participation in this Phishing Awareness training.</p>
+    <div class="ack-steps">
+      <div class="ack-step"><div class="step-num">1</div><span>Go through all 12 training slides in the viewer above, including the final acknowledgment slide.</span></div>
+      <div class="ack-step"><div class="step-num">2</div><span>Review the key takeaways section.</span></div>
+      <div class="ack-step"><div class="step-num">3</div><span>Complete the acknowledgment form to confirm completion.</span></div>
+    </div>
+    <a class="ack-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSeGbjQt01htKnhlTB8AipNfPb9_PyQcqmg2W20snWMO1VJXyQ/viewform?usp=dialog target="_blank">Complete Acknowledgment Form &rarr;</a>
+  </div>
+
+  <div class="nav-row">
+    <a class="nav-btn nav-btn-outline" href="https://sites.google.com/pathtocollege.org/ptc-onboarding/module-11-cc">&larr; Module 11</a>
+  </div>
+
+</div>
+</body>
+</html>
