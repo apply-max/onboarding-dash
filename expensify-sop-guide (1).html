@@ -1,0 +1,1487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Expensify SOP — Path to College</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #8B1A1A;
+    --red-light: #f9f0f0;
+    --red-mid: #c94040;
+    --dark: #1a1a1a;
+    --mid: #444;
+    --muted: #777;
+    --border: #e8e4e0;
+    --surface: #fafaf8;
+    --white: #ffffff;
+    --green: #1a6645;
+    --amber: #b36b00;
+    --blue: #1a4d8b;
+    --step-max: 820px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--surface);
+    color: var(--dark);
+    line-height: 1.6;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--red);
+    color: white;
+    padding: 60px 40px 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 60%, rgba(255,255,255,0.05) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 20%, rgba(255,255,255,0.04) 0%, transparent 50%);
+  }
+  .hero-logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    position: relative;
+    font-size: 28px;
+  }
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.4rem;
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+    position: relative;
+  }
+  .hero p {
+    font-size: 1rem;
+    opacity: 0.8;
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .hero-badges {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .badge {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+    color: white;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+  }
+
+  /* NAV */
+  .nav-strip {
+    background: white;
+    border-bottom: 1px solid var(--border);
+    padding: 0 40px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    gap: 4px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .nav-strip::-webkit-scrollbar { display: none; }
+  .nav-link {
+    padding: 14px 16px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--muted);
+    text-decoration: none;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+    letter-spacing: 0.2px;
+  }
+  .nav-link:hover, .nav-link.active { color: var(--red); border-bottom-color: var(--red); }
+
+  /* LAYOUT */
+  .container {
+    max-width: var(--step-max);
+    margin: 0 auto;
+    padding: 48px 24px;
+  }
+
+  /* SECTION TITLES */
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.7rem;
+    color: var(--dark);
+    margin-bottom: 6px;
+  }
+  .section-sub {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-bottom: 28px;
+  }
+
+  /* PRINCIPLES GRID */
+  .principles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+    margin-bottom: 48px;
+  }
+  .principle-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .principle-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--red);
+  }
+  .principle-icon {
+    font-size: 22px;
+    margin-bottom: 8px;
+    display: block;
+  }
+  .principle-card h3 {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 4px;
+  }
+  .principle-card p {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  /* STEPS */
+  .steps-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .step-item {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    transition: box-shadow 0.2s;
+  }
+  .step-item:hover { box-shadow: 0 2px 12px rgba(139,26,26,0.08); }
+  .step-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 22px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .step-num {
+    width: 36px;
+    height: 36px;
+    background: var(--red);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.82rem;
+    font-weight: 600;
+    flex-shrink: 0;
+    letter-spacing: 0.5px;
+  }
+  .step-num.done { background: var(--green); }
+  .step-header-text { flex: 1; }
+  .step-header-text strong {
+    display: block;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--dark);
+  }
+  .step-header-text span {
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+  .step-chevron {
+    font-size: 14px;
+    color: var(--muted);
+    transition: transform 0.25s;
+  }
+  .step-item.open .step-chevron { transform: rotate(180deg); }
+  .step-body {
+    display: none;
+    padding: 0 22px 22px;
+    border-top: 1px solid var(--border);
+  }
+  .step-item.open .step-body { display: block; }
+  .step-body-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding-top: 18px;
+  }
+  @media (max-width: 600px) {
+    .step-body-inner { grid-template-columns: 1fr; }
+  }
+  .step-text h4 {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--red);
+    margin-bottom: 10px;
+  }
+  .step-text ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .step-text li {
+    font-size: 0.85rem;
+    color: var(--mid);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    line-height: 1.5;
+  }
+  .step-text li .bullet {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--red);
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+  .step-text li .bullet.green { background: var(--green); }
+  .step-text li .bullet.red-x { background: #cc3333; }
+  .tip-box {
+    background: #fffbf0;
+    border-left: 3px solid #e09600;
+    border-radius: 0 8px 8px 0;
+    padding: 10px 14px;
+    margin-top: 12px;
+    font-size: 0.8rem;
+    color: var(--amber);
+    line-height: 1.5;
+  }
+  .warn-box {
+    background: #fff5f5;
+    border-left: 3px solid var(--red-mid);
+    border-radius: 0 8px 8px 0;
+    padding: 10px 14px;
+    margin-top: 12px;
+    font-size: 0.8rem;
+    color: var(--red);
+    line-height: 1.5;
+  }
+
+  /* PHONE MOCKUP */
+  .phone-frame {
+    background: #111;
+    border-radius: 28px;
+    padding: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+    max-width: 220px;
+    margin: 0 auto;
+  }
+  .phone-inner {
+    background: #f2f2f7;
+    border-radius: 18px;
+    overflow: hidden;
+    min-height: 340px;
+  }
+  .phone-status {
+    background: #1a1a1a;
+    color: white;
+    font-size: 9px;
+    padding: 8px 16px 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .phone-topbar {
+    background: white;
+    padding: 10px 14px;
+    border-bottom: 1px solid #e5e5e5;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .phone-topbar .logo-dot {
+    width: 26px;
+    height: 26px;
+    background: #02b458;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .phone-topbar span {
+    font-size: 11px;
+    font-weight: 600;
+    color: #1a1a1a;
+  }
+  .phone-content {
+    padding: 12px;
+  }
+  .expense-card-phone {
+    background: white;
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 8px;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+  .merchant-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  .expense-info h5 {
+    font-size: 10px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 2px;
+  }
+  .expense-info p {
+    font-size: 9px;
+    color: #888;
+  }
+  .expense-amount {
+    margin-left: auto;
+    font-size: 11px;
+    font-weight: 600;
+    color: #1a1a1a;
+  }
+  .expense-status {
+    display: inline-block;
+    font-size: 8px;
+    padding: 2px 7px;
+    border-radius: 10px;
+    font-weight: 500;
+    margin-top: 3px;
+  }
+  .status-pending { background: #fff3cd; color: #856404; }
+  .status-approved { background: #d1fae5; color: #065f46; }
+  .status-needs { background: #fee2e2; color: #991b1b; }
+
+  /* FLOW DIAGRAM */
+  .flow-diagram {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    overflow-x: auto;
+    padding: 24px 0;
+    margin: 20px 0;
+    scrollbar-width: thin;
+  }
+  .flow-node {
+    background: white;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    text-align: center;
+    min-width: 110px;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+    position: relative;
+  }
+  .flow-node:hover { border-color: var(--red); background: var(--red-light); }
+  .flow-node.active { border-color: var(--red); background: var(--red-light); }
+  .flow-node .fn-icon { font-size: 20px; display: block; margin-bottom: 5px; }
+  .flow-node .fn-label { font-size: 0.72rem; font-weight: 600; color: var(--dark); }
+  .flow-node .fn-sub { font-size: 0.65rem; color: var(--muted); margin-top: 2px; }
+  .flow-arrow {
+    color: var(--border);
+    font-size: 18px;
+    flex-shrink: 0;
+    padding: 0 4px;
+    color: #ccc;
+  }
+
+  /* DEADLINE TIMELINE */
+  .timeline {
+    position: relative;
+    padding-left: 28px;
+    margin: 20px 0;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 9px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: var(--border);
+  }
+  .tl-item {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  .tl-dot {
+    position: absolute;
+    left: -24px;
+    top: 3px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 0 0 2px var(--red);
+    background: var(--red);
+  }
+  .tl-dot.green { box-shadow: 0 0 0 2px var(--green); background: var(--green); }
+  .tl-dot.amber { box-shadow: 0 0 0 2px var(--amber); background: var(--amber); }
+  .tl-item h4 { font-size: 0.88rem; font-weight: 600; color: var(--dark); }
+  .tl-item p { font-size: 0.8rem; color: var(--muted); margin-top: 2px; }
+
+  /* FAQ */
+  .faq-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .faq-item {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .faq-q {
+    padding: 16px 20px;
+    font-weight: 500;
+    font-size: 0.88rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+  .faq-q .faq-chevron { font-size: 12px; color: var(--muted); transition: transform 0.2s; flex-shrink: 0; }
+  .faq-item.open .faq-chevron { transform: rotate(180deg); }
+  .faq-a {
+    display: none;
+    padding: 0 20px 16px;
+    font-size: 0.85rem;
+    color: var(--mid);
+    line-height: 1.65;
+    border-top: 1px solid var(--border);
+    padding-top: 14px;
+  }
+  .faq-item.open .faq-a { display: block; }
+
+  /* DO / DON'T */
+  .do-dont {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 20px 0;
+  }
+  @media (max-width: 500px) { .do-dont { grid-template-columns: 1fr; } }
+  .do-list, .dont-list {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 20px;
+  }
+  .do-list { border-top: 3px solid var(--green); }
+  .dont-list { border-top: 3px solid #cc3333; }
+  .do-list h3, .dont-list h3 {
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .do-list h3 { color: var(--green); }
+  .dont-list h3 { color: #cc3333; }
+  .do-list li, .dont-list li {
+    font-size: 0.82rem;
+    color: var(--mid);
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+    line-height: 1.5;
+  }
+  .do-list li::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; }
+  .dont-list li::before { content: '✕'; color: #cc3333; font-weight: 700; flex-shrink: 0; }
+
+  /* DESCRIPTION EXAMPLES */
+  .desc-examples {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 14px;
+  }
+  .desc-ex {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-size: 0.82rem;
+  }
+  .desc-ex .tag {
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .tag-bad { background: #fee2e2; color: #991b1b; }
+  .tag-good { background: #d1fae5; color: #065f46; }
+
+  /* CATEGORY CHIPS */
+  .category-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+  }
+  .chip {
+    background: var(--red-light);
+    border: 1px solid rgba(139,26,26,0.15);
+    color: var(--red);
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 0.78rem;
+    font-weight: 500;
+  }
+
+  /* APPROVAL FLOW */
+  .approval-flow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 16px 0;
+    flex-wrap: wrap;
+  }
+  .approval-node {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 16px;
+    text-align: center;
+    flex: 1;
+    min-width: 100px;
+  }
+  .approval-node .anode-icon { font-size: 18px; margin-bottom: 4px; }
+  .approval-node .anode-label { font-size: 0.75rem; font-weight: 600; color: var(--dark); }
+  .approval-node .anode-sub { font-size: 0.68rem; color: var(--muted); }
+  .approval-arrow { font-size: 16px; color: #ccc; flex-shrink: 0; }
+
+  /* SECTION DIVIDER */
+  .section-divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 40px 0;
+  }
+
+  /* FINAL NOTE */
+  .final-note {
+    background: var(--red);
+    color: white;
+    border-radius: 16px;
+    padding: 28px 32px;
+    text-align: center;
+    margin: 40px 0;
+  }
+  .final-note p {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.3rem;
+    font-style: italic;
+    opacity: 0.95;
+  }
+
+  /* DESKTOP SCREEN MOCKUP */
+  .desktop-mockup {
+    background: #1e1e1e;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  }
+  .desktop-topbar {
+    background: #2a2a2a;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .desktop-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+  }
+  .desktop-url {
+    background: #3a3a3a;
+    border-radius: 6px;
+    padding: 4px 12px;
+    font-size: 10px;
+    color: #aaa;
+    margin-left: 8px;
+    flex: 1;
+  }
+  .desktop-screen {
+    background: white;
+    padding: 16px;
+    min-height: 200px;
+  }
+  .exp-header {
+    background: #02b458;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: -16px -16px 14px -16px;
+  }
+  .exp-header .exp-logo {
+    font-weight: 800;
+    font-size: 14px;
+    letter-spacing: -0.5px;
+  }
+  .exp-nav {
+    display: flex;
+    gap: 14px;
+    font-size: 10px;
+    opacity: 0.85;
+  }
+  .exp-nav span.active-nav { opacity: 1; font-weight: 600; border-bottom: 1.5px solid white; padding-bottom: 1px; }
+  .expense-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 10px;
+    color: #333;
+  }
+  .expense-row:last-child { border-bottom: none; }
+  .row-check {
+    width: 14px; height: 14px;
+    border: 1.5px solid #ddd;
+    border-radius: 3px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .row-merchant { flex: 1; font-weight: 500; }
+  .row-cat { color: #888; font-size: 9px; flex: 0.8; }
+  .row-amount { font-weight: 600; text-align: right; min-width: 48px; }
+  .row-receipt-icon { font-size: 11px; }
+
+  /* Receipt match indicator */
+  .receipt-matched { color: #16a34a; }
+  .receipt-missing { color: #dc2626; }
+
+  /* Description field mockup */
+  .desc-field {
+    background: #fafafa;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 7px 10px;
+    font-size: 10px;
+    color: #555;
+    margin-top: 8px;
+  }
+  .desc-field.focus { border-color: #02b458; }
+  .field-label { font-size: 8px; text-transform: uppercase; letter-spacing: 0.8px; color: #999; margin-bottom: 3px; font-weight: 600; }
+
+  /* Scrollable hint for phones */
+  @media (max-width: 480px) {
+    .flow-diagram { padding-bottom: 8px; }
+    .hero h1 { font-size: 1.8rem; }
+    .container { padding: 32px 16px; }
+  }
+
+  .scroll-hint {
+    text-align: center;
+    font-size: 0.72rem;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-logo">🎓</div>
+  <h1>Expensify SOP</h1>
+  <p>Expense &amp; Receipt Management — Path to College Fellowship</p>
+  <div class="hero-badges">
+    <span class="badge">All Card Holders</span>
+    <span class="badge">Real-Time Submission</span>
+    <span class="badge">QuickBooks Sync</span>
+    <span class="badge">Audit-Ready</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav-strip">
+  <a href="#principles" class="nav-link active">Principles</a>
+  <a href="#how-it-works" class="nav-link">How It Works</a>
+  <a href="#steps" class="nav-link">Step-by-Step</a>
+  <a href="#deadlines" class="nav-link">Deadlines</a>
+  <a href="#do-dont" class="nav-link">Do &amp; Don't</a>
+  <a href="#faq" class="nav-link">FAQ</a>
+</nav>
+
+<!-- PRINCIPLES -->
+<div class="container" id="principles">
+  <h2 class="section-title">Core Principles</h2>
+  <p class="section-sub">These five rules underpin everything we do with Expensify.</p>
+  <div class="principles-grid">
+    <div class="principle-card">
+      <span class="principle-icon">⚡</span>
+      <h3>Real-Time Submission</h3>
+      <p>Submit as you spend — never batch at month-end. Receipts fade, memories fade faster.</p>
+    </div>
+    <div class="principle-card">
+      <span class="principle-icon">🧾</span>
+      <h3>Receipt Required</h3>
+      <p>Every expense needs a valid receipt. No exceptions, no receipt = not approved.</p>
+    </div>
+    <div class="principle-card">
+      <span class="principle-icon">🎯</span>
+      <h3>Accuracy First</h3>
+      <p>Get it right before getting it fast. Expensify's AI mislabels categories — always verify.</p>
+    </div>
+    <div class="principle-card">
+      <span class="principle-icon">📝</span>
+      <h3>Clear Descriptions</h3>
+      <p>Explain the business purpose clearly. Who, what, why — every time.</p>
+    </div>
+    <div class="principle-card">
+      <span class="principle-icon">🏦</span>
+      <h3>Expensify = Source of Truth</h3>
+      <p>No more Google Drive uploads. Everything lives in Expensify, period.</p>
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div style="background: white; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 40px 0;" id="how-it-works">
+  <div class="container" style="padding-top: 0; padding-bottom: 0;">
+    <h2 class="section-title">How Expensify Works in Our System</h2>
+    <p class="section-sub">Transactions flow automatically — your job is to categorize, describe, and submit on time.</p>
+
+    <div class="flow-diagram">
+      <div class="flow-node active">
+        <span class="fn-icon">💳</span>
+        <div class="fn-label">Card Swipe</div>
+        <div class="fn-sub">Capital One Spark</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node">
+        <span class="fn-icon">⏱</span>
+        <div class="fn-label">24–36 hrs</div>
+        <div class="fn-sub">Auto-import</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node">
+        <span class="fn-icon">📸</span>
+        <div class="fn-label">Upload Receipt</div>
+        <div class="fn-sub">Match to charge</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node">
+        <span class="fn-icon">✏️</span>
+        <div class="fn-label">Code &amp; Submit</div>
+        <div class="fn-sub">You review</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node">
+        <span class="fn-icon">👩‍💼</span>
+        <div class="fn-label">Maria Reviews</div>
+        <div class="fn-sub">Approval 1</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node">
+        <span class="fn-icon">📊</span>
+        <div class="fn-label">QuickBooks</div>
+        <div class="fn-sub">Final sync</div>
+      </div>
+    </div>
+    <p class="scroll-hint">← Scroll to see full flow →</p>
+  </div>
+</div>
+
+<!-- STEPS -->
+<div class="container" id="steps">
+  <h2 class="section-title">Step-by-Step SOP</h2>
+  <p class="section-sub">Click any step to expand instructions and see what it looks like in the app.</p>
+
+  <div class="steps-list">
+
+    <!-- STEP 1 -->
+    <div class="step-item" onclick="toggleStep(this)">
+      <div class="step-header">
+        <div class="step-num">01</div>
+        <div class="step-header-text">
+          <strong>Make the Purchase</strong>
+          <span>Use your company-issued card whenever possible</span>
+        </div>
+        <div class="step-chevron">▼</div>
+      </div>
+      <div class="step-body">
+        <div class="step-body-inner">
+          <div class="step-text">
+            <h4>Instructions</h4>
+            <ul>
+              <li><span class="bullet green"></span>Always use your Capital One Spark Business Card</li>
+              <li><span class="bullet"></span>Avoid personal cards unless there is truly no alternative</li>
+              <li><span class="bullet"></span>If you must use a personal card, flag Maria immediately</li>
+            </ul>
+            <div class="warn-box">⚠️ Personal card charges require prior approval and may delay reimbursement.</div>
+          </div>
+          <div>
+            <div class="phone-frame">
+              <div class="phone-inner">
+                <div class="phone-status">
+                  <span>9:41 AM</span><span>●●●</span>
+                </div>
+                <div class="phone-topbar">
+                  <div class="logo-dot">E</div>
+                  <span>Expensify</span>
+                </div>
+                <div class="phone-content">
+                  <p style="font-size:9px;color:#888;margin-bottom:8px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px">Recent Activity</p>
+                  <div class="expense-card-phone">
+                    <div class="merchant-icon" style="background:#fff3e0;">🛒</div>
+                    <div class="expense-info">
+                      <h5>Whole Foods Market</h5>
+                      <p>Awaiting transaction…</p>
+                      <span class="expense-status status-pending">Pending import</span>
+                    </div>
+                    <span class="expense-amount">$47.82</span>
+                  </div>
+                  <p style="font-size:8px;color:#aaa;text-align:center;margin-top:8px;">Transactions appear in 24–36 hrs</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="step-item" onclick="toggleStep(this)">
+      <div class="step-header">
+        <div class="step-num">02</div>
+        <div class="step-header-text">
+          <strong>Save Your Receipt — Immediately</strong>
+          <span>Before it even hits Expensify</span>
+        </div>
+        <div class="step-chevron">▼</div>
+      </div>
+      <div class="step-body">
+        <div class="step-body-inner">
+          <div class="step-text">
+            <h4>Three Methods</h4>
+            <ul>
+              <li><span class="bullet"></span>📸 Take a photo right after purchase</li>
+              <li><span class="bullet"></span>📧 Save the email receipt to a "Receipts" folder</li>
+              <li><span class="bullet"></span>📁 Create a "Receipts" photo album on your phone as a habit</li>
+            </ul>
+            <div class="tip-box">💡 Best habit: create a dedicated "Receipts 2026" album on your phone. Screenshot every receipt into it immediately.</div>
+          </div>
+          <div>
+            <div class="phone-frame">
+              <div class="phone-inner">
+                <div class="phone-status">
+                  <span>9:43 AM</span><span>●●●</span>
+                </div>
+                <div style="background:#000;padding:30px 20px;text-align:center;">
+                  <div style="background:#1c1c1e;border-radius:10px;padding:16px 12px;">
+                    <div style="font-size:28px;margin-bottom:6px;">📷</div>
+                    <p style="font-size:9px;color:#fff;font-weight:600;">SmartScan Receipt</p>
+                    <p style="font-size:8px;color:#aaa;margin-top:3px;">Point camera at receipt</p>
+                    <div style="margin-top:12px;background:#02b458;border-radius:20px;padding:6px 14px;display:inline-block;">
+                      <span style="font-size:9px;color:white;font-weight:600;">Scan Now</span>
+                    </div>
+                  </div>
+                </div>
+                <div style="background:#f2f2f7;padding:10px 12px;">
+                  <p style="font-size:8px;color:#666;">Or forward receipts to:</p>
+                  <p style="font-size:9px;color:#02b458;font-weight:600;">receipts@expensify.com</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="step-item" onclick="toggleStep(this)">
+      <div class="step-header">
+        <div class="step-num">03</div>
+        <div class="step-header-text">
+          <strong>Upload Your Receipt to Expensify</strong>
+          <span>Four ways to get receipts in</span>
+        </div>
+        <div class="step-chevron">▼</div>
+      </div>
+      <div class="step-body">
+        <div class="step-body-inner">
+          <div class="step-text">
+            <h4>Upload Options</h4>
+            <ul>
+              <li><span class="bullet"></span>📸 App upload — scan receipt with SmartScan</li>
+              <li><span class="bullet"></span>📧 Forward email to receipts@expensify.com</li>
+              <li><span class="bullet"></span>📱 Text photo to your Expensify account</li>
+              <li><span class="bullet green"></span>💻 Desktop upload — <strong>preferred for bulk or email receipts</strong></li>
+            </ul>
+            <div class="tip-box">💡 Desktop is easiest when managing multiple receipts at once. Use drag-and-drop to upload many receipts quickly.</div>
+          </div>
+          <div>
+            <div class="desktop-mockup">
+              <div class="desktop-topbar">
+                <div class="desktop-dot" style="background:#ff5f57;"></div>
+                <div class="desktop-dot" style="background:#febc2e;"></div>
+                <div class="desktop-dot" style="background:#28c840;"></div>
+                <div class="desktop-url">expensify.com/receipts</div>
+              </div>
+              <div class="desktop-screen">
+                <div class="exp-header">
+                  <span class="exp-logo">Expensify</span>
+                  <div class="exp-nav">
+                    <span>Inbox</span>
+                    <span class="active-nav">Expenses</span>
+                    <span>Reports</span>
+                  </div>
+                </div>
+                <div style="border:2px dashed #02b458;border-radius:8px;padding:16px;text-align:center;background:#f0fdf7;margin-bottom:12px;">
+                  <div style="font-size:20px;margin-bottom:4px;">📂</div>
+                  <p style="font-size:10px;color:#16a34a;font-weight:600;">Drag &amp; drop receipts here</p>
+                  <p style="font-size:9px;color:#888;margin-top:2px;">JPG, PNG, PDF supported</p>
+                </div>
+                <div style="font-size:9px;color:#888;text-align:center;">or</div>
+                <div style="text-align:center;margin-top:8px;">
+                  <span style="background:#02b458;color:white;border-radius:6px;padding:5px 12px;font-size:9px;font-weight:600;">+ Upload Receipts</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 4 -->
+    <div class="step-item" onclick="toggleStep(this)">
+      <div class="step-header">
+        <div class="step-num">04</div>
+        <div class="step-header-text">
+          <strong>Wait for Transaction to Appear</strong>
+          <span>24–36 hours — do not manually create</span>
+        </div>
+        <div class="step-chevron">▼</div>
+      </div>
+      <div class="step-body">
+        <div class="step-body-inner">
+          <div class="step-text">
+            <h4>What to Do</h4>
+            <ul>
+              <li><span class="bullet"></span>Wait 24–36 hours for card transaction to auto-import</li>
+              <li><span class="bullet"></span>If missing after 36 hrs, notify Maria — card may need relinking</li>
+              <li><span class="bullet red-x"></span>❌ DO NOT manually create an expense unless explicitly told to</li>
+            </ul>
+            <div class="warn-box">⚠️ Manually creating an expense when a card charge already exists triggers an incorrect reimbursement. This creates accounting errors that are hard to fix.</div>
+          </div>
+          <div>
+            <div class="phone-frame">
+              <div class="phone-inner">
+                <div class="phone-status"><span>10:02 AM</span><span>●●●</span></div>
+                <div class="phone-topbar">
+                  <div class="logo-dot">E</div>
+                  <span>Expenses</span>
+                </div>
+                <div class="phone-content">
+                  <div class="expense-card-phone" style="border:1.5px solid #d1fae5;">
+                    <div class="merchant-icon" style="background:#d1fae5;">☕</div>
+                    <div class="expense-info">
+                      <h5>Starbucks</h5>
+                      <p>Mar 14 · Just imported</p>
+                      <span class="expense-status status-needs">Needs coding</span>
+                    </div>
+                    <span class="expense-amount">$12.50</span>
+                  </div>
+                  <div class="expense-card-phone">
+                    <div class="merchant-icon" style="background:#fef9ee;">🏪</div>
+                    <div class="expense-info">
+                      <h5>Office Depot</h5>
+                      <p>Mar 13 · Coded</p>
+                      <span class="expense-status status-approved">Submitted</span>
+                    </div>
+                    <span class="expense-amount">$34.99</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 5 -->
+    <div class="step-item" onclick="toggleStep(this)">
+      <div class="step-header">
+        <div class="step-num">05</div>
+        <div class="step-header-text">
+          <strong>Review &amp; Code the Expense</strong>
+          <span>The most important step — get all five fields right</span>
+        </div>
+        <div class="step-chevron">▼</div>
+      </div>
+      <div class="step-body">
+        <div style="padding-top: 18px;">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 16px;">
+            
+            <div style="background: #fafafa; border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px;">
+              <h4 style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:var(--red);margin-bottom:8px;">✔ Description <span style="color:#cc3333;">(Required)</span></h4>
+              <p style="font-size:0.78rem;color:var(--mid);margin-bottom:10px;">Who + What + Why. Be specific.</p>
+              <div class="desc-examples">
+                <div class="desc-ex"><span class="tag tag-bad">✕</span><span>"Lunch"</span></div>
+                <div class="desc-ex"><span class="tag tag-good">✓</span><span>"Lunch with donor to discuss scholarship funding"</span></div>
+                <div class="desc-ex"><span class="tag tag-bad">✕</span><span>"Supplies"</span></div>
+                <div class="desc-ex"><span class="tag tag-good">✓</span><span>"Printer paper for EdFest welcome packets"</span></div>
+              </div>
+            </div>
+
+            <div style="background: #fafafa; border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px;">
+              <h4 style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:var(--red);margin-bottom:8px;">✔ Category</h4>
+              <p style="font-size:0.78rem;color:var(--mid);margin-bottom:8px;">Common categories at Path to College:</p>
+              <div class="category-chips">
+                <span class="chip">Meals</span>
+                <span class="chip">Travel</span>
+                <span class="chip">Supplies</span>
+                <span class="chip">Professional Development</span>
+                <span class="chip">Community Outreach</span>
+              </div>
+              <div class="warn-box" style="margin-top:10px;">⚠️ Expensify AI often mislabels (especially as "Legal/Professional"). Always double-check.</div>
+            </div>
+
+            <div style="background: #fafafa; border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px;">
+              <h4 style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:var(--red);margin-bottom:8px;">✔ Class <span style="color:var(--amber);">(Important)</span></h4>
+              <p style="font-size:0.78rem;color:var(--mid);margin-bottom:8px;">Used for nonprofit cost allocation:</p>
+              <div class="category-chips">
+                <span class="chip">Education</span>
+                <span class="chip">Split Standard</span>
+              </div>
+              <div class="tip-box" style="margin-top:10px;">💡 This is handled on the backend for reporting — but it must be set correctly.</div>
+            </div>
+
+            <div style="background: #fafafa; border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px;">
+              <h4 style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:var(--red);margin-bottom:8px;">✔ Customer/Project <span style="color:var(--muted);">(Rare)</span></h4>
+              <p style="font-size:0.78rem;color:var(--mid);margin-bottom:8px;">Only for event-level reporting. Use if expense is tied to:</p>
+              <div class="category-chips">
+                <span class="chip">Shine and Dine</span>
+                <span class="chip">EdFest</span>
+                <span class="chip">Community Impact Night</span>
+                <span class="chip">Speed Interview Night</span>
+              </div>
+            </div>
+
+            <div style="background: #fafafa; border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px;">
+              <h4 style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:var(--green);margin-bottom:8px;">✔ Merchant — Do Not Edit</h4>
+              <p style="font-size:0.78rem;color:var(--mid);">The merchant field syncs automatically with QuickBooks. Changing it breaks the sync.</p>
+              <div class="warn-box" style="margin-top:10px;">❌ Never change the Merchant field.</div>
+            </div>
+
+            <div style="background: #fafafa; border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px;">
+              <h4 style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:var(--green);margin-bottom:8px;">✔ Reimbursable — Leave Off</h4>
+              <p style="font-size:0.78rem;color:var(--mid);">For company card expenses, this should always be unchecked.</p>
+              <div class="warn-box" style="margin-top:10px;">❌ Do NOT check Reimbursable for company card charges. This will trigger an incorrect payment.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 6 -->
+    <div class="step-item" onclick="toggleStep(this)">
+      <div class="step-header">
+        <div class="step-num">06</div>
+        <div class="step-header-text">
+          <strong>Match Receipt to Expense</strong>
+          <span>Confirm receipt is attached and complete</span>
+        </div>
+        <div class="step-chevron">▼</div>
+      </div>
+      <div class="step-body">
+        <div class="step-body-inner">
+          <div class="step-text">
+            <h4>Receipt Must Show</h4>
+            <ul>
+              <li><span class="bullet green"></span>Vendor / merchant name</li>
+              <li><span class="bullet green"></span>Date of purchase</li>
+              <li><span class="bullet green"></span>Total amount paid</li>
+              <li><span class="bullet green"></span>Itemization (when applicable — especially for meals)</li>
+            </ul>
+            <div class="tip-box">💡 Meal receipts should ideally show individual items — this helps if expenses are audited. Credit card slips alone are not sufficient.</div>
+          </div>
+          <div>
+            <div class="desktop-mockup">
+              <div class="desktop-topbar">
+                <div class="desktop-dot" style="background:#ff5f57;"></div>
+                <div class="desktop-dot" style="background:#febc2e;"></div>
+                <div class="desktop-dot" style="background:#28c840;"></div>
+              </div>
+              <div class="desktop-screen">
+                <div class="exp-header">
+                  <span class="exp-logo">Expense Detail</span>
+                </div>
+                <div class="expense-row">
+                  <div class="row-check" style="background:#d1fae5;border-color:#16a34a;">✓</div>
+                  <div class="row-merchant">Whole Foods Market</div>
+                  <div class="row-cat">Meals</div>
+                  <div class="row-amount">$47.82</div>
+                  <div class="row-receipt-icon receipt-matched">🧾✓</div>
+                </div>
+                <div class="expense-row">
+                  <div class="row-check"></div>
+                  <div class="row-merchant">Amazon Business</div>
+                  <div class="row-cat">Supplies</div>
+                  <div class="row-amount">$89.99</div>
+                  <div class="row-receipt-icon receipt-missing">🧾⚠️</div>
+                </div>
+                <div style="font-size:8px;color:#dc2626;margin-top:6px;padding:6px 8px;background:#fff5f5;border-radius:4px;">⚠️ Amazon receipt missing — upload before submitting</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 7 -->
+    <div class="step-item" onclick="toggleStep(this)">
+      <div class="step-header">
+        <div class="step-num">07</div>
+        <div class="step-header-text">
+          <strong>Organize Into Reports</strong>
+          <span>Weekly reports make everyone's life easier</span>
+        </div>
+        <div class="step-chevron">▼</div>
+      </div>
+      <div class="step-body">
+        <div class="step-body-inner">
+          <div class="step-text">
+            <h4>Report Guidelines</h4>
+            <ul>
+              <li><span class="bullet green"></span>Weekly reports are best practice</li>
+              <li><span class="bullet"></span>Monthly is acceptable if needed</li>
+              <li><span class="bullet"></span>Select expenses → "Move to Report"</li>
+              <li><span class="bullet"></span>Name clearly: <strong>March 2026 – Week 1</strong></li>
+            </ul>
+            <div class="tip-box">💡 Organized reports = faster approvals, cleaner accounting, and easier audits. This takes 2 minutes and saves hours later.</div>
+          </div>
+          <div>
+            <div class="desktop-mockup">
+              <div class="desktop-topbar">
+                <div class="desktop-dot" style="background:#ff5f57;"></div>
+                <div class="desktop-dot" style="background:#febc2e;"></div>
+                <div class="desktop-dot" style="background:#28c840;"></div>
+              </div>
+              <div class="desktop-screen">
+                <div class="exp-header">
+                  <span class="exp-logo">Reports</span>
+                </div>
+                <div style="background:#f0fdf7;border:1px solid #bbf7d0;border-radius:6px;padding:8px 10px;margin-bottom:8px;display:flex;align-items:center;gap:8px;">
+                  <span style="font-size:12px;">📋</span>
+                  <div>
+                    <p style="font-size:10px;font-weight:600;color:#065f46;">March 2026 – Week 2</p>
+                    <p style="font-size:9px;color:#16a34a;">4 expenses · $247.31 · Ready to submit</p>
+                  </div>
+                  <span style="margin-left:auto;font-size:9px;background:#02b458;color:white;padding:3px 8px;border-radius:10px;">Submit</span>
+                </div>
+                <div style="background:#fff;border:1px solid #e0e0e0;border-radius:6px;padding:8px 10px;display:flex;align-items:center;gap:8px;">
+                  <span style="font-size:12px;">📋</span>
+                  <div>
+                    <p style="font-size:10px;font-weight:600;color:#333;">March 2026 – Week 1</p>
+                    <p style="font-size:9px;color:#888;">6 expenses · $389.55 · Approved ✓</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 8–10 condensed -->
+    <div class="step-item" onclick="toggleStep(this)">
+      <div class="step-header">
+        <div class="step-num done">08</div>
+        <div class="step-header-text">
+          <strong>Submit → Approval → Done</strong>
+          <span>Steps 8–10: Submit report, get approved, sync to QuickBooks</span>
+        </div>
+        <div class="step-chevron">▼</div>
+      </div>
+      <div class="step-body">
+        <div style="padding-top: 18px;">
+          <div class="approval-flow">
+            <div class="approval-node">
+              <div class="anode-icon">📤</div>
+              <div class="anode-label">You Submit</div>
+              <div class="anode-sub">Report submitted</div>
+            </div>
+            <div class="approval-arrow">→</div>
+            <div class="approval-node">
+              <div class="anode-icon">👩‍💼</div>
+              <div class="anode-label">Maria Reviews</div>
+              <div class="anode-sub">First approval</div>
+            </div>
+            <div class="approval-arrow">→</div>
+            <div class="approval-node">
+              <div class="anode-icon">📚</div>
+              <div class="anode-label">Bookkeeper</div>
+              <div class="anode-sub">Final approval</div>
+            </div>
+            <div class="approval-arrow">→</div>
+            <div class="approval-node" style="border-top: 3px solid var(--green);">
+              <div class="anode-icon">✅</div>
+              <div class="anode-label">QuickBooks</div>
+              <div class="anode-sub">Synced &amp; finalized</div>
+            </div>
+          </div>
+          <div class="warn-box" style="margin-top: 0;">⚠️ Once approved, expenses cannot be edited without admin/bookkeeper intervention. Get it right before submitting.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- DEADLINES -->
+<div style="background: white; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 40px 0;" id="deadlines">
+  <div class="container" style="padding-top:0;padding-bottom:0;">
+    <h2 class="section-title">Deadlines That Matter</h2>
+    <p class="section-sub">Missing these affects board reporting and financial close.</p>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>Receipt Upload → Within 24 hours</h4>
+        <p>Upload your receipt the same day you make the purchase. Don't let it sit.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot amber"></div>
+        <h4>Expense Coding → Weekly</h4>
+        <p>Set a weekly 15–30 minute "expense block" — Friday afternoons work well. Review, code, and organize into a report.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot green"></div>
+        <h4>Month-End Close → First week of next month</h4>
+        <p><strong>Non-negotiable.</strong> All expenses for the prior month must be submitted and in Maria's queue by the first few days of the following month. This feeds directly into board financial reporting.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DO & DON'T -->
+<div class="container" id="do-dont">
+  <h2 class="section-title">Do &amp; Don't</h2>
+  <p class="section-sub">Common mistakes and the right habits to build instead.</p>
+  <div class="do-dont">
+    <div class="do-list">
+      <h3>✓ Do</h3>
+      <ul>
+        <li>Submit expenses in real time</li>
+        <li>Take a receipt photo immediately after purchase</li>
+        <li>Write descriptive, specific expense descriptions</li>
+        <li>Double-check the AI-assigned category</li>
+        <li>Organize expenses into weekly named reports</li>
+        <li>Ask Maria if you're unsure about anything</li>
+        <li>Set a weekly recurring "expense block" on your calendar</li>
+      </ul>
+    </div>
+    <div class="dont-list">
+      <h3>✕ Don't</h3>
+      <ul>
+        <li>Wait until end of month to submit</li>
+        <li>Submit without attaching a receipt</li>
+        <li>Create manual expenses for card charges</li>
+        <li>Leave descriptions vague (e.g., just "lunch")</li>
+        <li>Change the Merchant field</li>
+        <li>Check the Reimbursable box for company cards</li>
+        <li>Guess on category — when in doubt, ask</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div style="background: white; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 40px 0;" id="faq">
+  <div class="container" style="padding-top:0;padding-bottom:0;">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <p class="section-sub">Click any question to expand the answer.</p>
+    <div class="faq-grid">
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">
+          <span>What if my expense hasn't shown up yet?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-a">Wait 24–36 hours — card transactions have a delay before they auto-import. If it's still missing after that window, notify Maria. The most common cause is that the card needs relinking in Expensify.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">
+          <span>What if I lost my receipt?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-a">Upload an alternative proof — a bank or card statement showing the charge, or a forwarded confirmation email. Add an explanation note in the description field explaining why the original receipt isn't available. Approval is not guaranteed in this case — prevention is the best policy.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">
+          <span>Why can't I edit an approved expense?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-a">Once approved, the expense may already be exported to QuickBooks. Changes at that point require admin or bookkeeper intervention to keep the two systems in sync. This is why getting it right before submitting matters so much.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">
+          <span>Why is my category showing as "Legal/Professional"?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-a">Expensify's AI frequently mislabels expenses — "Legal/Professional" is one of the most common wrong auto-assignments. This is normal. Always manually correct the category before submitting. Never trust the AI default.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">
+          <span>Should I ever manually create an expense?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-a">No — not for company card charges. Manually creating an expense when a card charge already exists (or will arrive) triggers a reimbursement instead of matching the existing charge. Only create manual expenses if Maria has specifically instructed you to for a particular situation.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">
+          <span>What should I put in the Description field?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-a">
+          Think: Who + What + Why. Examples:
+          <br>• "Lunch with donor to discuss scholarship funding" ✓
+          <br>• "Office supplies for EdFest volunteer packets" ✓
+          <br>• "Parent/student meeting – college tour meal" ✓
+          <br>• "Lunch" ✗ — too vague, will be flagged
+        </div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">
+          <span>Can I upload multiple receipts to one expense?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-a">Yes, you can add multiple attachments to a single expense. However, there is one primary receipt — this should be the clearest, most complete version. Additional attachments are supplemental. To delete an incorrect receipt, use the three-dot menu. You may need to exit and re-enter the expense to see the delete option appear.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">
+          <span>What happens if I don't submit on time?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-a">Late submissions delay financial reporting, impact board financials, and can hold up the accounting close process for the entire organization. The month-end deadline in the first week of the following month is non-negotiable — missing it creates extra work for Maria and the bookkeeper.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BEST PRACTICES -->
+<div class="container">
+  <h2 class="section-title">Team Best Practices</h2>
+  <p class="section-sub">Small habits that make a big difference at month-end.</p>
+  <div class="principles-grid">
+    <div class="principle-card">
+      <span class="principle-icon">📅</span>
+      <h3>Weekly Expense Block</h3>
+      <p>Block 15–30 minutes on your calendar each Friday to review, code, and submit that week's expenses.</p>
+    </div>
+    <div class="principle-card">
+      <span class="principle-icon">📱</span>
+      <h3>Phone Receipt Album</h3>
+      <p>Create a dedicated "Receipts 2026" photo album. Screenshot or photo every receipt directly into it.</p>
+    </div>
+    <div class="principle-card">
+      <span class="principle-icon">📧</span>
+      <h3>Forward Email Receipts</h3>
+      <p>Email receipts to receipts@expensify.com immediately. This creates a backup and speeds up matching.</p>
+    </div>
+    <div class="principle-card">
+      <span class="principle-icon">🙋</span>
+      <h3>Ask Don't Guess</h3>
+      <p>Unsure about a category, class, or project field? Ask Maria before submitting — it's faster than fixing it after approval.</p>
+    </div>
+  </div>
+
+  <div class="final-note">
+    <p>"Do the dang goal… and submit your expenses on time."</p>
+  </div>
+
+  <p style="text-align:center;font-size:0.78rem;color:var(--muted);margin-top:16px;">
+    Path to College Fellowship · Expensify SOP · Updated 2026<br>
+    Questions? Contact Maria or check the full SOP document.
+  </p>
+</div>
+
+<script>
+  function toggleStep(el) {
+    el.classList.toggle('open');
+  }
+  function toggleFaq(el) {
+    el.classList.toggle('open');
+  }
+
+  // Sticky nav active highlighting
+  const sections = ['principles','how-it-works','steps','deadlines','do-dont','faq'];
+  const navLinks = document.querySelectorAll('.nav-link');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el && window.scrollY >= el.offsetTop - 80) current = id;
+    });
+    navLinks.forEach(link => {
+      link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+    });
+  });
+
+  // Open first step by default
+  document.querySelector('.step-item').classList.add('open');
+</script>
+</body>
+</html>
