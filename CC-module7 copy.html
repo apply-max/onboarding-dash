@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Module 8 – ESET Cybersecurity Awareness Training | Path to College</title>
+<title>Module 7 – Florida Professionally Mandated Reporter | Path to College</title>
 <style>
 *{box-sizing:border-box;}
 body{margin:0;font-family:Arial,sans-serif;background:#f4f4f4;color:#222;}
@@ -18,13 +18,15 @@ body{margin:0;font-family:Arial,sans-serif;background:#f4f4f4;color:#222;}
 .progress-label{display:flex;justify-content:space-between;font-size:13px;color:#666;margin-bottom:8px;}
 .progress-label span{font-weight:bold;color:#c8102e;}
 .progress-bar-bg{background:#f0f0f0;border-radius:50px;height:10px;overflow:hidden;}
-.progress-bar-fill{background:#c8102e;height:100%;width:42.3%;border-radius:50px;}
+.progress-bar-fill{background:#c8102e;height:100%;width:40.3%;border-radius:50px;}
 .content-card{background:white;border-radius:16px;box-shadow:0 5px 12px rgba(0,0,0,0.08);overflow:hidden;margin-bottom:25px;}
 .content-card-header{background:#c8102e;color:white;padding:20px 30px;}
 .content-card-header h2{margin:0;font-size:20px;}
 .content-card-header p{margin:6px 0 0;font-size:14px;opacity:0.85;}
 .content-card-body{padding:30px;}
 .intro-text{font-size:15.5px;line-height:1.8;color:#333;margin-bottom:28px;padding-bottom:22px;border-bottom:2px solid #f0f0f0;}
+
+/* Training Info Cards */
 .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:28px;}
 .info-card{background:#f9f9f9;border-radius:10px;padding:14px 18px;border-left:4px solid #c8102e;}
 .info-card .info-label{font-size:11px;font-weight:bold;color:#c8102e;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;}
@@ -32,16 +34,20 @@ body{margin:0;font-family:Arial,sans-serif;background:#f4f4f4;color:#222;}
 .info-card.required{border-left-color:#b45309;background:#fffbf0;}
 .info-card.required .info-label{color:#b45309;}
 .info-card.required .info-value{color:#92400e;}
+
+/* Section */
 .section-block{margin-bottom:28px;}
 .section-block h3{font-size:16px;color:#c8102e;margin:0 0 14px;padding-bottom:6px;border-bottom:2px solid #f0f0f0;}
+
+/* Steps */
 .steps-list{display:flex;flex-direction:column;gap:16px;margin:0;padding:0;list-style:none;}
 .step-item{display:flex;gap:16px;align-items:flex-start;}
 .step-num{background:#c8102e;color:white;width:32px;height:32px;border-radius:50%;font-size:15px;font-weight:bold;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
 .step-content{flex:1;font-size:14.5px;color:#444;line-height:1.7;}
 .step-content strong{color:#222;}
 .step-content em{color:#555;}
-.step-content ul{margin:8px 0 0;padding-left:18px;}
-.step-content ul li{margin-bottom:4px;font-size:14px;}
+
+/* Activity box */
 .activity-box{background:#fff8f8;border:2px solid #c8102e;border-radius:10px;padding:18px 22px;margin:20px 0;display:flex;gap:14px;align-items:flex-start;}
 .activity-icon{font-size:22px;flex-shrink:0;margin-top:2px;}
 .activity-content{flex:1;}
@@ -49,17 +55,15 @@ body{margin:0;font-family:Arial,sans-serif;background:#f4f4f4;color:#222;}
 .activity-content p:last-child{margin-bottom:0;}
 .activity-btn{display:inline-block;background:#c8102e;color:white;text-decoration:none;padding:9px 18px;border-radius:7px;font-size:13px;font-weight:bold;transition:background 0.2s;}
 .activity-btn:hover{background:#9e0d23;}
+
+/* Warning box */
 .warning-box{background:#fff7ed;border:2px solid #f59e0b;border-radius:12px;padding:20px 24px;margin:24px 0;display:flex;gap:14px;align-items:flex-start;}
 .warning-icon{font-size:26px;flex-shrink:0;}
+.warning-content{flex:1;}
 .warning-content p{font-size:14.5px;color:#78350f;line-height:1.7;margin:0;}
 .warning-content strong{color:#92400e;}
-/* Modules covered visual */
-.modules-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:12px 0;}
-.module-tag{background:#f9f9f9;border:1.5px solid #e8e8e8;border-radius:7px;padding:8px 6px;font-size:12px;color:#444;text-align:center;line-height:1.4;}
-.module-tag strong{display:block;color:#c8102e;font-size:13px;}
-/* Screenshot note */
-.screenshot-note{background:#f0f9ff;border-left:4px solid #3b82f6;border-radius:0 8px 8px 0;padding:14px 18px;margin:12px 0;font-size:14px;color:#1e40af;line-height:1.6;}
-.screenshot-note strong{color:#1e3a8a;}
+
+/* Ack box */
 .ack-box{background:white;border-radius:16px;box-shadow:0 5px 12px rgba(0,0,0,0.08);padding:30px;margin-bottom:25px;border-top:4px solid #222;}
 .ack-box h3{margin:0 0 10px;font-size:17px;color:#222;}
 .ack-box p{font-size:14.5px;color:#555;line-height:1.7;margin:0 0 20px;}
@@ -68,11 +72,21 @@ body{margin:0;font-family:Arial,sans-serif;background:#f4f4f4;color:#222;}
 .ack-step .step-num-sm{background:#222;color:white;width:22px;height:22px;border-radius:50%;font-size:11px;font-weight:bold;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
 .ack-btn{display:inline-block;background:#c8102e;color:white;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:15px;font-weight:bold;transition:background 0.2s;}
 .ack-btn:hover{background:#9e0d23;}
+
+/* Nav */
 .nav-row{display:flex;justify-content:space-between;align-items:center;gap:16px;}
 .nav-btn{display:inline-block;padding:12px 22px;border-radius:8px;font-size:14px;font-weight:bold;text-decoration:none;transition:0.2s;}
 .nav-btn-outline{border:2px solid #c8102e;color:#c8102e;background:white;}
 .nav-btn-outline:hover{background:#fff5f5;}
-@media(max-width:600px){.info-grid{grid-template-columns:1fr;}.modules-grid{grid-template-columns:repeat(3,1fr);}.header h1{font-size:24px;}.nav-row{flex-direction:column;}.nav-btn{width:100%;text-align:center;}}
+.nav-btn-fill{background:#c8102e;color:white;border:2px solid #c8102e;}
+.nav-btn-fill:hover{background:#9e0d23;border-color:#9e0d23;}
+
+@media(max-width:600px){
+  .info-grid{grid-template-columns:1fr;}
+  .header h1{font-size:24px;}
+  .nav-row{flex-direction:column;}
+  .nav-btn{width:100%;text-align:center;}
+}
 </style>
 </head>
 <body>
@@ -83,69 +97,59 @@ body{margin:0;font-family:Arial,sans-serif;background:#f4f4f4;color:#222;}
     <p>Employee Onboarding Program &mdash; Office of Operations</p>
   </div>
 
-  <div class="breadcrumb"><a href="#">Home</a> &rsaquo; Module 8: ESET Cybersecurity Awareness Training</div>
+  <div class="breadcrumb"><a href="#">Home</a> &rsaquo; Module 7: Florida Professionally Mandated Reporter</div>
 
   <div class="progress-wrap">
-    <div class="progress-label"><span>Module 8 of 23</span><span>ESET Cybersecurity Awareness Training</span></div>
+    <div class="progress-label"><span>Module 7 of 23</span><span>Florida Professionally Mandated Reporter</span></div>
     <div class="progress-bar-bg"><div class="progress-bar-fill"></div></div>
   </div>
 
   <div class="content-card">
     <div class="content-card-header">
-      <h2>Module 8: ESET Cybersecurity Awareness Training</h2>
-      <p>Complete your required annual cybersecurity training and submit your completion screenshot.</p>
+      <h2>Module 7: Florida Professionally Mandated Reporter</h2>
+      <p>Complete your required compliance training and submit your certificate.</p>
     </div>
     <div class="content-card-body">
 
-      <p class="intro-text">This module covers your required ESET Cybersecurity Awareness Training. As a Path to College employee, you are required to complete this training annually. Please read the instructions carefully and follow all steps to receive <strong>In Compliance</strong> status.</p>
+      <p class="intro-text">This module covers your required Florida Professionally Mandated Reporter training. As a staff member, you are legally required to complete this training. Please read the instructions carefully and follow all steps to receive <strong>In Compliance</strong> status.</p>
 
+      <!-- Training Info -->
       <div class="section-block">
         <h3>Training Details</h3>
         <div class="info-grid">
           <div class="info-card">
             <div class="info-label">Training Title</div>
-            <div class="info-value">ESET Cybersecurity Awareness Training [Virtual]</div>
+            <div class="info-value">Florida Professionally Mandated Reporter [Virtual]</div>
           </div>
           <div class="info-card">
             <div class="info-label">Training Provider</div>
-            <div class="info-value">ESET North America</div>
+            <div class="info-value">Florida Department of Children and Families</div>
           </div>
           <div class="info-card">
             <div class="info-label">Training Length</div>
-            <div class="info-value">Approx. 1 Hour</div>
+            <div class="info-value">Approx. 2 Hours</div>
           </div>
           <div class="info-card">
             <div class="info-label">Training Renewal</div>
-            <div class="info-value">Annually at time of employment anniversary</div>
+            <div class="info-value">One-time</div>
           </div>
           <div class="info-card required" style="grid-column:1/-1;">
             <div class="info-label">Training Status</div>
-            <div class="info-value">⚠️ REQUIRED for All Employees</div>
+            <div class="info-value">⚠️ REQUIRED for Programs Department Staff</div>
           </div>
         </div>
       </div>
 
+      <!-- Training Link Activity -->
       <div class="activity-box">
-        <div class="activity-icon">🔐</div>
+        <div class="activity-icon">🎓</div>
         <div class="activity-content">
-          <p><strong>Ready to begin?</strong> Click the button below to access the ESET Cybersecurity Awareness Training. You can also find the link directly in BambooHR.</p>
-          <a class="activity-btn" href="https://notify.eset.com/cybersecurity-awareness-training" target="_blank">Start Training &rarr;</a>
+          <p><strong>Ready to begin?</strong> Click the button below to access the Florida Professionally Mandated Reporter training. You can also find the link directly in BambooHR.</p>
+          <a class="activity-btn" href="https://www.myflfamilies.com/sites/default/files/PT/FlProMandatedReporter/story.html" target="_blank">Start Training &rarr;</a>
         </div>
       </div>
 
-      <div class="section-block">
-        <h3>Training Modules Covered</h3>
-        <p style="font-size:14px;color:#555;margin-bottom:12px;">You must complete <strong>all</strong> of the following modules, including Working Remotely. Module boxes start blue and turn gray when completed.</p>
-        <div class="modules-grid">
-          <div class="module-tag"><strong>Email</strong>Phishing · Attachments · Spam</div>
-          <div class="module-tag"><strong>Internet Safety</strong>Wi-Fi · HTTPS · Web Content · Search Engine</div>
-          <div class="module-tag"><strong>Personalized Threats</strong>Social Engineering · Insider Threats</div>
-          <div class="module-tag"><strong>Malware</strong>Types · Targets · How It Spreads</div>
-          <div class="module-tag"><strong>Passwords</strong>Personal Info · Hygiene · Management · 2FA</div>
-        </div>
-        <div class="module-tag" style="margin-top:8px;background:#fff5f5;border-color:#c8102e;"><strong style="color:#c8102e;">🆕 Working Remotely</strong> Stay Safe While Working Remotely</div>
-      </div>
-
+      <!-- Steps -->
       <div class="section-block">
         <h3>How to Complete This Training</h3>
         <p style="font-size:14px;color:#555;margin-bottom:16px;">Please complete <strong>all</strong> of the following steps to receive <em>In Compliance</em> status.</p>
@@ -156,63 +160,52 @@ body{margin:0;font-family:Arial,sans-serif;background:#f4f4f4;color:#222;}
           </li>
           <li class="step-item">
             <div class="step-num">2</div>
-            <div class="step-content">Fill in the required registration information:
-              <ul>
-                <li>For "How will you be using this training?" select <strong><em>Taking it myself / as an employee.</em></strong></li>
-                <li>For "I agree to receive marketing emails from ESET" select <strong><em>No.</em></strong></li>
-              </ul>
-            </div>
+            <div class="step-content">Click the <strong>play button</strong> and follow the on-screen prompts.</div>
           </li>
           <li class="step-item">
             <div class="step-num">3</div>
-            <div class="step-content">Click the green <strong>Register Now</strong> button.</div>
+            <div class="step-content">Complete the training, then complete the <strong>training assessment</strong>. You must pass the assessment for compliance credit. Once the training is complete, click the <em>Lead the Way</em> icon and then select the <em>Demonstrate</em> method. This will bring you to the course completion exam.</div>
           </li>
           <li class="step-item">
             <div class="step-num">4</div>
-            <div class="step-content">Complete <strong>all</strong> training modules including <em>Working Remotely</em>. Module boxes will start blue and turn gray once completed.</div>
+            <div class="step-content">Once you have completed the assessment and are on the certificate screen, be sure to click <em>Print</em>, then <strong>save the certificate as a PDF</strong>. <u>To receive credit for completing this training, you must save and submit the certificate.</u></div>
           </li>
           <li class="step-item">
             <div class="step-num">5</div>
-            <div class="step-content">Once all modules are complete, you will receive a <strong>Congratulations!</strong> completion message on screen.
-              <div class="screenshot-note" style="margin-top:10px;"><strong>📸 Required:</strong> Take a screenshot of the screen showing the Congratulations / completion message. You must submit this screenshot to receive compliance credit.</div>
-            </div>
-          </li>
-          <li class="step-item">
-            <div class="step-num">6</div>
-            <div class="step-content">Check off completion in BambooHR. In the pop-up, enter your <strong>completion date</strong> and <strong>upload the screenshot</strong> of your completion message.</div>
+            <div class="step-content"><strong>Check off completion</strong> of the training in BambooHR. You will see a pop-up — enter the completion date and <strong>upload your assessment certificate PDF</strong>.</div>
           </li>
         </ol>
       </div>
 
+      <!-- Warning -->
       <div class="warning-box">
         <div class="warning-icon">⚠️</div>
         <div class="warning-content">
-          <p><strong>Please Note:</strong> Failure to complete Steps 5 and 6 will result in receiving an <strong>OUT OF COMPLIANCE</strong> employee training status. Make sure to screenshot your completion message and upload it to BambooHR before marking complete.</p>
+          <p><strong>Please Note:</strong> Failure to complete Steps 4 and 5 will result in receiving an <strong>OUT OF COMPLIANCE</strong> employee training status. Make sure to save your certificate and upload it to BambooHR before marking complete.</p>
         </div>
       </div>
 
     </div>
   </div>
 
+  <!-- Acknowledgment -->
   <div class="ack-box">
     <h3>Ready to Sign Your Acknowledgment?</h3>
-    <p>Once you have fully completed all training modules and submitted your screenshot, return to BambooHR to sign your Module 8 acknowledgment.</p>
+    <p>Once you have fully completed the training and submitted your certificate, return to BambooHR to sign your Module 7 acknowledgment.</p>
     <div class="ack-steps">
-      <div class="ack-step"><div class="step-num-sm">1</div><span>Complete all 6 training modules including Working Remotely, and take a screenshot of the completion message.</span></div>
+      <div class="ack-step"><div class="step-num-sm">1</div><span>Complete all 5 training steps above and save your certificate PDF.</span></div>
       <div class="ack-step"><div class="step-num-sm">2</div><span>Log in to BambooHR and navigate to your onboarding section.</span></div>
-      <div class="ack-step"><div class="step-num-sm">3</div><span>Enter your completion date and upload your screenshot.</span></div>
-      <div class="ack-step"><div class="step-num-sm">4</div><span>Sign the Module 8 acknowledgment to confirm completion.</span></div>
+      <div class="ack-step"><div class="step-num-sm">3</div><span>Enter your completion date and upload your certificate.</span></div>
+      <div class="ack-step"><div class="step-num-sm">4</div><span>Sign the Module 7 acknowledgment to confirm completion.</span></div>
     </div>
     <a class="ack-btn" href="https://pathtocollege.bamboohr.com/home" target="_blank">Go to BambooHR to Sign &rarr;</a>
   </div>
 
   <div class="nav-row">
-    <a class="nav-btn nav-btn-outline" href="https://sites.google.com/pathtocollege.org/ptc-onboarding/module-7-cc">&larr; Module 7</a>
-    <a class="nav-btn nav-btn-outline" href="https://sites.google.com/pathtocollege.org/ptc-onboarding/module-9-cc" style="border-color:#c8102e;background:#c8102e;color:white;">Next: Module 9 &rarr;</a>
+    <a class="nav-btn nav-btn-outline" href="https://sites.google.com/pathtocollege.org/ptc-onboarding/module6-vem">&larr; Back: Module 6</a>
+    <a class="nav-btn nav-btn-fill" href="https://sites.google.com/pathtocollege.org/ptc-onboarding/module8-vem">Next: Module 8 &rarr;</a>
   </div>
-
+  
 </div>
 </body>
 </html>
-
-
