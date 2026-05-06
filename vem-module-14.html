@@ -1,0 +1,166 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Module 14 &ndash; Key People &amp; Teams | Path to College VEM</title><style>* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; background: #f4f4f4; color: #222; }
+.container { max-width: 900px; margin: auto; padding: 40px 20px; }
+.header { background: white; padding: 35px; border-radius: 16px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.08); margin-bottom: 10px; border-top: 6px solid #c8102e; }
+.header h1 { margin: 0; font-size: 32px; color: #c8102e; }
+.header p { margin-top: 10px; font-size: 17px; color: #555; }
+.breadcrumb { font-size: 13px; color: #888; margin-bottom: 25px; padding: 0 4px; }
+.breadcrumb a { color: #c8102e; text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; }
+.progress-wrap { background: white; border-radius: 12px; padding: 20px 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); margin-bottom: 25px; }
+.progress-label { display: flex; justify-content: space-between; font-size: 13px; color: #666; margin-bottom: 8px; }
+.progress-label span { font-weight: bold; color: #c8102e; }
+.progress-bar-bg { background: #f0f0f0; border-radius: 50px; height: 10px; overflow: hidden; }
+.progress-bar-fill { background: #c8102e; height: 100%; border-radius: 50px; transition: width 0.4s ease; }
+.phase-tag { display: inline-block; font-size: 11px; font-weight: bold; padding: 3px 10px; border-radius: 100px; margin-bottom: 6px; }
+.phase-shared { background: #e8f4fd; color: #1a5f8a; }
+.phase-vem { background: #fff0f0; color: #9e0d23; }
+.content-card { background: white; border-radius: 16px; box-shadow: 0 5px 12px rgba(0,0,0,0.08); overflow: hidden; margin-bottom: 25px; }
+.content-card-header { background: #c8102e; color: white; padding: 20px 30px; }
+.content-card-header h2 { margin: 0; font-size: 20px; }
+.content-card-header p { margin: 6px 0 0; font-size: 14px; opacity: 0.85; }
+.content-card-body { padding: 30px; }
+.welcome-banner { background: #fff5f5; border-left: 4px solid #c8102e; border-radius: 0 8px 8px 0; padding: 18px 22px; margin-bottom: 28px; font-size: 15.5px; line-height: 1.7; color: #333; }
+.welcome-banner strong { color: #c8102e; }
+.section-block { margin-bottom: 28px; }
+.section-block h3 { font-size: 16px; color: #c8102e; margin: 0 0 12px; padding-bottom: 6px; border-bottom: 2px solid #f0f0f0; }
+.section-block ul, .section-block ol { margin: 0; padding-left: 20px; }
+.section-block ul li, .section-block ol li { font-size: 15px; color: #444; margin-bottom: 8px; line-height: 1.6; }
+.section-block ul li strong { color: #222; }
+.section-block p { font-size: 15px; color: #444; line-height: 1.7; margin: 0 0 10px; }
+.card-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.info-card { background: #f9f9f9; border: 1.5px solid #e8e8e8; border-radius: 8px; padding: 14px 16px; }
+.info-card.top { border-top: 3px solid #c8102e; }
+.info-card h4 { margin: 0 0 6px; font-size: 14px; color: #c8102e; }
+.info-card p { margin: 0; font-size: 13.5px; color: #555; line-height: 1.5; }
+.info-card ul { margin: 6px 0 0; padding-left: 16px; }
+.info-card ul li { font-size: 13px; color: #555; margin-bottom: 3px; line-height: 1.4; }
+.module-overview-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 4px; }
+.module-pill { background: #f9f9f9; border: 1.5px solid #e8e8e8; border-radius: 8px; padding: 10px 14px; font-size: 14px; color: #444; display: flex; align-items: center; gap: 10px; }
+.module-pill .num { background: #c8102e; color: white; font-size: 11px; font-weight: bold; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.module-pill.vem-pill { border-color: #f5c6cc; background: #fff8f8; }
+.module-pill.vem-pill .num { background: #9e0d23; }
+.module-pill.vem-pill .label { color: #9e0d23; font-style: italic; }
+.module-pill.current { border-color: #c8102e; background: #fff5f5; }
+.module-pill.current .label { font-weight: bold; color: #c8102e; }
+.outcomes-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.outcome-item { background: #f9f9f9; border-radius: 8px; padding: 14px 16px; font-size: 14px; color: #444; line-height: 1.5; display: flex; gap: 10px; align-items: flex-start; }
+.outcome-item .check { color: #c8102e; font-size: 16px; margin-top: 1px; flex-shrink: 0; }
+.step-block { border: 1.5px solid #e8e8e8; border-radius: 10px; overflow: hidden; margin-bottom: 10px; }
+.step-head { background: #c8102e; color: white; padding: 10px 16px; display: flex; align-items: center; gap: 10px; }
+.step-badge { background: rgba(255,255,255,0.2); font-size: 11px; font-weight: bold; padding: 3px 9px; border-radius: 100px; }
+.step-head h4 { margin: 0; font-size: 14px; }
+.step-body { padding: 14px 16px; background: #fafafa; }
+.step-body ul { margin: 0; padding-left: 18px; }
+.step-body ul li { font-size: 14px; color: #444; margin-bottom: 5px; line-height: 1.5; }
+.highlight-box { background: #fff5f5; border-left: 4px solid #c8102e; border-radius: 0 8px 8px 0; padding: 16px 20px; margin: 12px 0; font-size: 14.5px; color: #333; line-height: 1.7; }
+.highlight-box strong { color: #c8102e; }
+.warning-box { background: #fffbeb; border-left: 4px solid #f59e0b; border-radius: 0 8px 8px 0; padding: 16px 20px; margin: 12px 0; font-size: 14.5px; color: #333; line-height: 1.7; }
+.warning-box strong { color: #92400e; }
+.danger-box { background: #fff0f0; border-left: 4px solid #dc2626; border-radius: 0 8px 8px 0; padding: 16px 20px; margin: 12px 0; font-size: 14.5px; color: #7f1d1d; line-height: 1.7; }
+.danger-box strong { color: #b91c1c; }
+.red-banner { background: #c8102e; color: white; border-radius: 10px; padding: 18px 22px; margin: 12px 0; font-size: 14.5px; line-height: 1.7; }
+.red-banner strong { color: #ffd0d8; }
+.activity-box { background: #fffbeb; border: 1.5px solid #fbbf24; border-radius: 10px; padding: 16px 20px; margin: 12px 0; }
+.activity-box p { margin: 0; font-size: 14.5px; color: #444; line-height: 1.6; }
+.activity-box a { color: #c8102e; font-weight: bold; }
+.training-box { background: #f9f9f9; border: 1.5px solid #e8e8e8; border-radius: 10px; padding: 18px; margin: 12px 0; }
+.training-box table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.training-box td { padding: 8px 12px; border-bottom: 1px solid #eee; }
+.training-box td:first-child { color: #888; font-size: 13px; width: 45%; }
+.training-box td:last-child { font-weight: bold; color: #222; }
+.training-box tr:last-child td { border-bottom: none; }
+.pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.pill { background: #fff5f5; color: #c8102e; font-size: 13px; font-weight: bold; padding: 5px 14px; border-radius: 100px; border: 1.5px solid #f5c6cc; }
+.person-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.person-card { background: #f9f9f9; border: 1.5px solid #e8e8e8; border-radius: 8px; padding: 14px 16px; display: flex; gap: 12px; align-items: flex-start; }
+.avatar { width: 40px; height: 40px; border-radius: 50%; background: #c8102e; color: white; font-size: 13px; font-weight: bold; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.person-info h4 { margin: 0 0 3px; font-size: 14px; color: #222; }
+.person-info .role { font-size: 13px; color: #666; }
+.person-info .note { font-size: 12.5px; color: #c8102e; margin-top: 3px; font-style: italic; }
+.flag-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.flag-card { background: #fff8f8; border: 1.5px solid #fca5a5; border-radius: 8px; padding: 14px 16px; }
+.flag-card h4 { margin: 0 0 8px; font-size: 13.5px; color: #7f1d1d; }
+.flag-card ul { margin: 0; padding-left: 16px; }
+.flag-card ul li { font-size: 13px; color: #7f1d1d; margin-bottom: 4px; }
+.phase-block { border: 1.5px solid #e8e8e8; border-radius: 12px; overflow: hidden; margin-bottom: 16px; }
+.phase-head { background: #c8102e; color: white; padding: 14px 20px; display: flex; align-items: center; gap: 12px; }
+.phase-badge { background: rgba(255,255,255,0.2); font-size: 12px; font-weight: bold; padding: 4px 12px; border-radius: 100px; }
+.phase-title { font-size: 15px; font-weight: bold; }
+.phase-body { padding: 18px 20px; background: white; }
+.phase-body ul { margin: 0; padding-left: 20px; }
+.phase-body ul li { font-size: 14.5px; color: #444; margin-bottom: 8px; line-height: 1.6; }
+.tool-list { display: flex; flex-direction: column; gap: 10px; }
+.tool-row { display: flex; gap: 14px; background: #f9f9f9; border: 1.5px solid #e8e8e8; border-radius: 8px; padding: 14px 16px; align-items: flex-start; }
+.tool-name { font-weight: bold; font-size: 14px; color: #c8102e; min-width: 110px; flex-shrink: 0; padding-top: 2px; }
+.tool-desc { font-size: 14px; color: #444; line-height: 1.5; }
+.tool-desc strong { color: #222; }
+.priority-stack { display: flex; flex-direction: column; gap: 10px; }
+.priority-item { display: flex; gap: 12px; background: #f9f9f9; border: 1.5px solid #e8e8e8; border-radius: 8px; padding: 14px 16px; align-items: flex-start; }
+.p-badge { background: #c8102e; color: white; font-size: 11px; font-weight: bold; padding: 3px 10px; border-radius: 100px; white-space: nowrap; flex-shrink: 0; margin-top: 2px; }
+.p-body h4 { margin: 0 0 4px; font-size: 14px; color: #222; }
+.p-body p { margin: 0; font-size: 13.5px; color: #555; line-height: 1.5; }
+.stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 16px; }
+.stat-card { background: #f9f9f9; border: 1.5px solid #e8e8e8; border-radius: 8px; padding: 16px; text-align: center; }
+.stat-num { font-size: 26px; font-weight: bold; color: #c8102e; }
+.stat-label { font-size: 12px; color: #666; margin-top: 4px; }
+.pto-table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 4px; }
+.pto-table th { background: #c8102e; color: white; text-align: left; padding: 9px 14px; font-size: 13px; }
+.pto-table th:first-child { border-radius: 6px 0 0 0; } .pto-table th:last-child { border-radius: 0 6px 0 0; }
+.pto-table td { padding: 9px 14px; border-bottom: 1px solid #eee; color: #444; }
+.pto-table tr:last-child td { border-bottom: none; }
+.pto-table tr:nth-child(even) td { background: #fafafa; }
+.tag { display: inline-block; background: #fff5f5; color: #c8102e; font-size: 12px; font-weight: bold; padding: 3px 9px; border-radius: 100px; }
+.ack-box { background: white; border-radius: 16px; box-shadow: 0 5px 12px rgba(0,0,0,0.08); padding: 30px; margin-bottom: 25px; border-top: 4px solid #222; }
+.ack-box h3 { margin: 0 0 10px; font-size: 17px; color: #222; }
+.ack-box p { font-size: 14.5px; color: #555; line-height: 1.7; margin: 0 0 20px; }
+.ack-steps { display: flex; flex-direction: column; gap: 10px; margin-bottom: 22px; }
+.ack-step { display: flex; align-items: flex-start; gap: 12px; font-size: 14px; color: #444; }
+.ack-step .sn { background: #222; color: white; width: 22px; height: 22px; border-radius: 50%; font-size: 11px; font-weight: bold; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+.ack-btn { display: inline-block; background: #c8102e; color: white; text-decoration: none; padding: 14px 28px; border-radius: 8px; font-size: 15px; font-weight: bold; transition: background 0.2s; }
+.ack-btn:hover { background: #9e0d23; }
+.nav-row { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.nav-btn { display: inline-block; padding: 12px 22px; border-radius: 8px; font-size: 14px; font-weight: bold; text-decoration: none; transition: 0.2s; }
+.nav-btn-outline { border: 2px solid #c8102e; color: #c8102e; background: white; }
+.nav-btn-outline:hover { background: #fff5f5; }
+.nav-btn-fill { background: #c8102e; color: white; border: 2px solid #c8102e; }
+.nav-btn-fill:hover { background: #9e0d23; border-color: #9e0d23; }
+@media(max-width:600px){
+  .card-grid,.outcomes-grid,.module-overview-grid,.person-grid,.flag-grid,.stat-grid{grid-template-columns:1fr;}
+  .header h1{font-size:24px;}
+  .nav-row{flex-direction:column;}
+  .nav-btn{width:100%;text-align:center;}
+}</style></head><body><div class="container"><div class="header"><h1>Path to College Learning Portal</h1><p>Volunteer Engagement Manager &mdash; Onboarding Program</p></div><div class="breadcrumb"><a href="https://sites.google.com/pathtocollege.org/ptc-onboarding">Home</a> &rsaquo; <a href="#">VEM Track</a> &rsaquo; Module 14: Key People</div><div class="progress-wrap"><div class="progress-label"><span>Module 14 of 22 &nbsp;&bull;&nbsp; <span class="phase-tag phase-vem">VEM-Specific</span></span><span>Key People &amp; Teams</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:63.6%"></div></div></div><div class="content-card"><div class="content-card-header"><h2>Module 14: Key People &amp; Teams</h2><p>Get to know your colleagues and who to go to for what.</p></div><div class="content-card-body"><div class="section-block"><h3>Programs Team</h3>
+<div class="person-grid">
+<div class="person-card"><div class="avatar">CS</div><div class="person-info"><h4>Christine Sylvain</h4><div class="role">Founder &amp; CEO</div><div class="note">christine@pathtocollege.org &bull; Escalate serious concerns here</div></div></div>
+<div class="person-card"><div class="avatar">MS</div><div class="person-info"><h4>Melanie Slone</h4><div class="role">Director of Programs</div><div class="note">Your direct supervisor</div></div></div>
+<div class="person-card"><div class="avatar">M</div><div class="person-info"><h4>Maria</h4><div class="role">VP of Operations</div><div class="note">Finance &amp; HR questions</div></div></div>
+<div class="person-card"><div class="avatar">DM</div><div class="person-info"><h4>Dr. Mel</h4><div class="role">College Advisor</div><div class="note">Student college planning</div></div></div>
+<div class="person-card"><div class="avatar">NK</div><div class="person-info"><h4>Nicole Knowles</h4><div class="role">Marketing Coordinator</div><div class="note">Brand &amp; communications</div></div></div>
+<div class="person-card"><div class="avatar">L</div><div class="person-info"><h4>Lucy</h4><div class="role">Development Manager</div><div class="note">Fundraising &amp; grants</div></div></div>
+<div class="person-card"><div class="avatar">S</div><div class="person-info"><h4>Shelby</h4><div class="role">Academic Program Manager</div><div class="note">Academic programming</div></div></div>
+<div class="person-card"><div class="avatar">C</div><div class="person-info"><h4>Cristabel</h4><div class="role">Programs Coordinator</div><div class="note">Day-to-day program ops</div></div></div>
+<div class="person-card"><div class="avatar">MC</div><div class="person-info"><h4>Melissa Cubillos</h4><div class="role">Volunteer &amp; Mentor Training</div><div class="note">Mentor process &amp; training contact</div></div></div>
+</div></div>
+<div class="section-block"><h3>Who to Ask for What</h3>
+<table class="pto-table">
+<thead><tr><th>Topic</th><th>Go To</th></tr></thead>
+<tbody>
+<tr><td><span class="tag">Mentor program / volunteers</span></td><td>Christine Sylvain</td></tr>
+<tr><td><span class="tag">Salesforce / program data</span></td><td>Programs Team</td></tr>
+<tr><td><span class="tag">Finances / expenses</span></td><td>Maria Smith</td></tr>
+<tr><td><span class="tag">HR / onboarding paperwork</span></td><td>BambooHR / Maria Smith</td></tr>
+<tr><td><span class="tag">Corporate partner relationships</span></td><td>Melissa Cubillos or Christine</td></tr>
+<tr><td><span class="tag">Expensify setup</span></td><td>JC Cavallo (first week)</td></tr>
+<tr><td><span class="tag">Google Drive access</span></td><td>Christine (first week)</td></tr>
+<tr><td><span class="tag">Serious escalations</span></td><td>Christine Sylvain, CEO</td></tr>
+</tbody></table></div>
+<div class="section-block"><h3>Community &amp; Corporate Partners</h3>
+<ul>
+<li><strong>United Way of Palm Beach County</strong> &mdash; Major funder and community anchor</li>
+<li><strong>Prime Time Palm Beach County</strong> &mdash; After-school and out-of-school time network</li>
+<li><strong>Community Foundation for Palm Beach and Martin County (CFPBMC)</strong> &mdash; Funder and community partner</li>
+<li><strong>Corporate partners</strong> &mdash; Employee volunteer pipelines; full list in Google Drive</li>
+</ul></div></div></div>
+  <span>Return here and proceed to Module 15.</span>
+  <div class="nav-row"><a class="nav-btn nav-btn-outline" href="vem-module-13.html">&larr; Back: Module 13</a><a class="nav-btn nav-btn-fill" href="vem-module-15.html">Next: Module 15 &rarr;</a></div></div></body></html>
