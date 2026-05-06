@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 9 – 15-Passenger Van Safety Training | Path to College</title>
+<style>
+*{box-sizing:border-box;}
+body{margin:0;font-family:Arial,sans-serif;background:#f4f4f4;color:#222;}
+.container{max-width:900px;margin:auto;padding:40px 20px;}
+.header{background:white;padding:35px;border-radius:16px;text-align:center;box-shadow:0 4px 10px rgba(0,0,0,0.08);margin-bottom:10px;border-top:6px solid #c8102e;}
+.header h1{margin:0;font-size:32px;color:#c8102e;}
+.header p{margin-top:10px;font-size:17px;color:#555;}
+.breadcrumb{font-size:13px;color:#888;margin-bottom:25px;padding:0 4px;}
+.breadcrumb a{color:#c8102e;text-decoration:none;}
+.breadcrumb a:hover{text-decoration:underline;}
+.progress-wrap{background:white;border-radius:12px;padding:20px 25px;box-shadow:0 4px 10px rgba(0,0,0,0.08);margin-bottom:25px;}
+.progress-label{display:flex;justify-content:space-between;font-size:13px;color:#666;margin-bottom:8px;}
+.progress-label span{font-weight:bold;color:#c8102e;}
+.progress-bar-bg{background:#f0f0f0;border-radius:50px;height:10px;overflow:hidden;}
+.progress-bar-fill{background:#c8102e;height:100%;width:80%;border-radius:50px;}
+.content-card{background:white;border-radius:16px;box-shadow:0 5px 12px rgba(0,0,0,0.08);overflow:hidden;margin-bottom:25px;}
+.content-card-header{background:#c8102e;color:white;padding:20px 30px;}
+.content-card-header h2{margin:0;font-size:20px;}
+.content-card-header p{margin:6px 0 0;font-size:14px;opacity:0.85;}
+.content-card-body{padding:30px;}
+.intro-text{font-size:15.5px;line-height:1.8;color:#333;margin-bottom:28px;padding-bottom:22px;border-bottom:2px solid #f0f0f0;}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:28px;}
+.info-card{background:#f9f9f9;border-radius:10px;padding:14px 18px;border-left:4px solid #c8102e;}
+.info-card .info-label{font-size:11px;font-weight:bold;color:#c8102e;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;}
+.info-card .info-value{font-size:14.5px;color:#333;font-weight:bold;}
+.info-card.required{border-left-color:#b45309;background:#fffbf0;}
+.info-card.required .info-label{color:#b45309;}
+.info-card.required .info-value{color:#92400e;}
+.section-block{margin-bottom:28px;}
+.section-block h3{font-size:16px;color:#c8102e;margin:0 0 14px;padding-bottom:6px;border-bottom:2px solid #f0f0f0;}
+.steps-list{display:flex;flex-direction:column;gap:16px;margin:0;padding:0;list-style:none;}
+.step-item{display:flex;gap:16px;align-items:flex-start;}
+.step-num{background:#c8102e;color:white;width:32px;height:32px;border-radius:50%;font-size:15px;font-weight:bold;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+.step-content{flex:1;font-size:14.5px;color:#444;line-height:1.7;}
+.step-content strong{color:#222;}
+.step-content em{color:#555;}
+/* Login note */
+.login-note{background:#f0f9ff;border-left:4px solid #3b82f6;border-radius:0 8px 8px 0;padding:14px 18px;margin:16px 0;font-size:14px;color:#1e40af;line-height:1.6;}
+.login-note strong{color:#1e3a8a;}
+/* Diploma note */
+.diploma-note{background:#f0fdf4;border-left:4px solid #16a34a;border-radius:0 8px 8px 0;padding:14px 18px;margin:10px 0;font-size:14px;color:#14532d;line-height:1.6;}
+.diploma-note strong{color:#166534;}
+.warning-box{background:#fff7ed;border:2px solid #f59e0b;border-radius:12px;padding:20px 24px;margin:24px 0;display:flex;gap:14px;align-items:flex-start;}
+.warning-icon{font-size:26px;flex-shrink:0;}
+.warning-content p{font-size:14.5px;color:#78350f;line-height:1.7;margin:0;}
+.warning-content strong{color:#92400e;}
+.ack-box{background:white;border-radius:16px;box-shadow:0 5px 12px rgba(0,0,0,0.08);padding:30px;margin-bottom:25px;border-top:4px solid #222;}
+.ack-box h3{margin:0 0 10px;font-size:17px;color:#222;}
+.ack-box p{font-size:14.5px;color:#555;line-height:1.7;margin:0 0 20px;}
+.ack-steps{display:flex;flex-direction:column;gap:10px;margin-bottom:22px;}
+.ack-step{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:#444;}
+.ack-step .step-num-sm{background:#222;color:white;width:22px;height:22px;border-radius:50%;font-size:11px;font-weight:bold;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.ack-btn{display:inline-block;background:#c8102e;color:white;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:15px;font-weight:bold;transition:background 0.2s;}
+.ack-btn:hover{background:#9e0d23;}
+.nav-row{display:flex;justify-content:space-between;align-items:center;gap:16px;}
+.nav-btn{display:inline-block;padding:12px 22px;border-radius:8px;font-size:14px;font-weight:bold;text-decoration:none;transition:0.2s;}
+.nav-btn-outline{border:2px solid #c8102e;color:#c8102e;background:white;}
+.nav-btn-outline:hover{background:#fff5f5;}
+.nav-btn-fill{background:#c8102e;color:white;border:2px solid #c8102e;}
+.nav-btn-fill:hover{background:#9e0d23;border-color:#9e0d23;}
+@media(max-width:600px){.info-grid{grid-template-columns:1fr;}.header h1{font-size:24px;}.nav-row{flex-direction:column;}.nav-btn{width:100%;text-align:center;}}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <h1>Path to College Learning Portal</h1>
+    <p>Employee Onboarding Program &mdash; Office of Operations</p>
+  </div>
+
+  <div class="breadcrumb"><a href="#">Home</a> &rsaquo; Module 9: 15-Passenger Van Safety Training</div>
+
+  <div class="progress-wrap">
+    <div class="progress-label"><span>Module 9 of 13</span><span>15-Passenger Van Safety Training</span></div>
+    <div class="progress-bar-bg"><div class="progress-bar-fill"></div></div>
+  </div>
+
+  <div class="content-card">
+    <div class="content-card-header">
+      <h2>Module 9: 15-Passenger Van Safety Training</h2>
+      <p>Complete your required van safety training and submit your assessment diploma.</p>
+    </div>
+    <div class="content-card-body">
+
+      <p class="intro-text">This module covers your required 15-Passenger Van Safety Training. This training is required for all approved drivers at Path to College. Please read the instructions carefully and follow all steps to receive <strong>In Compliance</strong> status.</p>
+
+      <div class="section-block">
+        <h3>Training Details</h3>
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="info-label">Training Title</div>
+            <div class="info-value">15-Passenger Van Safety Training [Virtual]</div>
+          </div>
+          <div class="info-card">
+            <div class="info-label">Training Provider</div>
+            <div class="info-value">UL Solutions</div>
+          </div>
+          <div class="info-card">
+            <div class="info-label">Training Length</div>
+            <div class="info-value">Approx. 20 Minutes</div>
+          </div>
+          <div class="info-card">
+            <div class="info-label">Training Renewal</div>
+            <div class="info-value">One-time</div>
+          </div>
+          <div class="info-card required" style="grid-column:1/-1;">
+            <div class="info-label">Training Status</div>
+            <div class="info-value">⚠️ REQUIRED for Approved Drivers</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="login-note">
+        <strong>📋 Account Access:</strong> You will be assigned a username and login from <strong>OSHA Outreach Courses</strong>. Watch for an email with your credentials before beginning. If you have not received your login, contact Operations.
+      </div>
+
+      <div class="section-block">
+        <h3>How to Complete This Training</h3>
+        <p style="font-size:14px;color:#555;margin-bottom:16px;">Please complete <strong>all</strong> of the following steps to receive <em>In Compliance</em> status.</p>
+        <ol class="steps-list">
+          <li class="step-item">
+            <div class="step-num">1</div>
+            <div class="step-content">Log in to your <strong>OSHA Outreach Courses</strong> account using the username and credentials that were assigned to you.</div>
+          </li>
+          <li class="step-item">
+            <div class="step-num">2</div>
+            <div class="step-content">Select the assigned <strong>15-Passenger Van Safety</strong> training from your dashboard.</div>
+          </li>
+          <li class="step-item">
+            <div class="step-num">3</div>
+            <div class="step-content">Complete the training, then complete the <strong>training assessment</strong>. You must pass the assessment for compliance credit.</div>
+          </li>
+          <li class="step-item">
+            <div class="step-num">4</div>
+            <div class="step-content">Once you have completed the assessment, you will be asked if you'd like to print your diploma.
+              <div class="diploma-note" style="margin-top:10px;"><strong>🎓 Required:</strong> You must print or save your assessment diploma as a PDF. This diploma is required to receive compliance credit — do not skip this step.</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div class="step-num">5</div>
+            <div class="step-content">Check off completion in BambooHR. In the pop-up, enter your <strong>completion date</strong> and <strong>upload your assessment diploma.</strong></div>
+          </li>
+        </ol>
+      </div>
+
+      <div class="warning-box">
+        <div class="warning-icon">⚠️</div>
+        <div class="warning-content">
+          <p><strong>Please Note:</strong> Failure to complete Steps 4 and 5 will result in receiving an <strong>OUT OF COMPLIANCE</strong> employee training status. Make sure to save your diploma and upload it to BambooHR before marking complete.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="ack-box">
+    <h3>Ready to Sign Your Acknowledgment?</h3>
+    <p>Once you have fully completed the training, passed the assessment, and submitted your diploma, return to BambooHR to sign your Module 9 acknowledgment.</p>
+    <div class="ack-steps">
+      <div class="ack-step"><div class="step-num-sm">1</div><span>Complete all 5 training steps above and save your assessment diploma.</span></div>
+      <div class="ack-step"><div class="step-num-sm">2</div><span>Log in to BambooHR and navigate to your onboarding section.</span></div>
+      <div class="ack-step"><div class="step-num-sm">3</div><span>Enter your completion date and upload your diploma.</span></div>
+      <div class="ack-step"><div class="step-num-sm">4</div><span>Sign the Module 9 acknowledgment to confirm completion.</span></div>
+    </div>
+    <a class="ack-btn" href="https://pathtocollege.bamboohr.com/home" target="_blank">Go to BambooHR to Sign &rarr;</a>
+  </div>
+
+  <div class="nav-row">
+    <a class="nav-btn nav-btn-outline" href="https://sites.google.com/pathtocollege.org/ptc-onboarding/module-8-cc">&larr; Module 8</a>
+    <a class="nav-btn nav-btn-fill" href="https://sites.google.com/pathtocollege.org/ptc-onboarding/module-10-cc">Next: Module 10 &rarr;</a>
+  </div>
+
+</div>
+</body>
+</html>
+
