@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 5 – Nonprofit Fundamentals | Path to College</title>
+<style>
+*{box-sizing:border-box;}
+body{margin:0;font-family:Arial,sans-serif;background:#f4f4f4;color:#222;}
+.container{max-width:900px;margin:auto;padding:40px 20px;}
+.header{background:white;padding:35px;border-radius:16px;text-align:center;box-shadow:0 4px 10px rgba(0,0,0,0.08);margin-bottom:10px;border-top:6px solid #c8102e;}
+.header h1{margin:0;font-size:32px;color:#c8102e;}
+.header p{margin-top:10px;font-size:17px;color:#555;}
+.breadcrumb{font-size:13px;color:#888;margin-bottom:25px;padding:0 4px;}
+.breadcrumb a{color:#c8102e;text-decoration:none;}
+.breadcrumb a:hover{text-decoration:underline;}
+.progress-wrap{background:white;border-radius:12px;padding:20px 25px;box-shadow:0 4px 10px rgba(0,0,0,0.08);margin-bottom:25px;}
+.progress-label{display:flex;justify-content:space-between;font-size:13px;color:#666;margin-bottom:8px;}
+.progress-label span{font-weight:bold;color:#c8102e;}
+.progress-bar-bg{background:#f0f0f0;border-radius:50px;height:10px;overflow:hidden;}
+.progress-bar-fill{background:#c8102e;height:100%;width:45.3%;border-radius:50px;}
+.content-card{background:white;border-radius:16px;box-shadow:0 5px 12px rgba(0,0,0,0.08);overflow:hidden;margin-bottom:25px;}
+.content-card-header{background:#c8102e;color:white;padding:20px 30px;}
+.content-card-header h2{margin:0;font-size:20px;}
+.content-card-header p{margin:6px 0 0;font-size:14px;opacity:0.85;}
+.content-card-body{padding:30px;}
+.intro-text{font-size:15.5px;line-height:1.8;color:#333;margin-bottom:28px;padding-bottom:22px;border-bottom:2px solid #f0f0f0;}
+.section-block{margin-bottom:28px;}
+.section-block h3{font-size:16px;color:#c8102e;margin:0 0 12px;padding-bottom:6px;border-bottom:2px solid #f0f0f0;}
+.section-block h4{font-size:14.5px;color:#333;margin:14px 0 8px;font-weight:bold;}
+.section-block p{font-size:15px;color:#444;line-height:1.7;margin:0 0 10px;}
+.section-block ul{margin:0 0 10px;padding-left:20px;}
+.section-block ul li{font-size:14.5px;color:#444;margin-bottom:8px;line-height:1.6;}
+/* Info card */
+.info-card{background:#f9f9f9;border-radius:10px;padding:18px 20px;margin-bottom:16px;border-left:4px solid #c8102e;}
+.info-card p{font-size:14.5px;color:#444;line-height:1.7;margin:0;}
+/* Mission recap */
+.mission-recap{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0;}
+.mission-item{background:#fff5f5;border:1.5px solid #c8102e;border-radius:8px;padding:14px 16px;}
+.mission-item .label{font-size:11px;font-weight:bold;color:#c8102e;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;}
+.mission-item p{font-size:14px;color:#333;margin:0;font-style:italic;line-height:1.5;}
+/* Funding tags */
+.funding-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px;}
+.funding-tag{background:#f9f9f9;border:1.5px solid #e8e8e8;border-radius:7px;padding:8px 12px;font-size:13px;color:#444;text-align:center;}
+/* Activity box */
+.activity-box{background:#fff8f8;border:2px solid #c8102e;border-radius:10px;padding:18px 22px;margin:16px 0;display:flex;gap:14px;align-items:flex-start;}
+.activity-icon{font-size:22px;flex-shrink:0;margin-top:2px;}
+.activity-content p{font-size:14.5px;color:#333;margin:0 0 12px;line-height:1.6;}
+.activity-content p:last-child{margin-bottom:0;}
+.activity-btn{display:inline-block;background:#c8102e;color:white;text-decoration:none;padding:9px 18px;border-radius:7px;font-size:13px;font-weight:bold;transition:background 0.2s;}
+.activity-btn:hover{background:#9e0d23;}
+/* Accreditation badge */
+.accred-badge{background:#f0fdf4;border:1.5px solid #16a34a;border-radius:10px;padding:14px 18px;display:flex;gap:12px;align-items:center;margin:12px 0;}
+.accred-badge .icon{font-size:22px;flex-shrink:0;}
+.accred-badge p{font-size:14px;color:#333;margin:0;line-height:1.6;}
+/* Closing message */
+.closing-msg{background:#f9f9f9;border-radius:10px;padding:20px 22px;margin-top:16px;font-size:15px;color:#444;line-height:1.8;border-top:3px solid #c8102e;}
+/* Ack box */
+.ack-box{background:white;border-radius:16px;box-shadow:0 5px 12px rgba(0,0,0,0.08);padding:30px;margin-bottom:25px;border-top:4px solid #222;}
+.ack-box h3{margin:0 0 10px;font-size:17px;color:#222;}
+.ack-box p{font-size:14.5px;color:#555;line-height:1.7;margin:0 0 20px;}
+.ack-steps{display:flex;flex-direction:column;gap:10px;margin-bottom:22px;}
+.ack-step{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:#444;}
+.ack-step .step-num{background:#222;color:white;width:22px;height:22px;border-radius:50%;font-size:11px;font-weight:bold;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.ack-btn{display:inline-block;background:#c8102e;color:white;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:15px;font-weight:bold;}
+.ack-btn:hover{background:#9e0d23;}
+.nav-row{display:flex;justify-content:space-between;align-items:center;gap:16px;}
+.nav-btn{display:inline-block;padding:12px 22px;border-radius:8px;font-size:14px;font-weight:bold;text-decoration:none;transition:0.2s;}
+.nav-btn-outline{border:2px solid #c8102e;color:#c8102e;background:white;}
+.nav-btn-outline:hover{background:#fff5f5;}
+.nav-btn-fill{background:#c8102e;color:white;border:2px solid #c8102e;}
+.nav-btn-fill:hover{background:#9e0d23;border-color:#9e0d23;}
+@media(max-width:600px){.mission-recap{grid-template-columns:1fr;}.funding-grid{grid-template-columns:repeat(2,1fr);}.header h1{font-size:24px;}.nav-row{flex-direction:column;}.nav-btn{width:100%;text-align:center;}}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>Path to College Learning Portal</h1>
+    <p>Employee Onboarding Program &mdash; Office of Operations</p>
+  </div>
+  <div class="breadcrumb"><a href="#">Home</a> &rsaquo; Module 5: Nonprofit Fundamentals</div>
+  <div class="progress-wrap">
+    <div class="progress-label"><span>Module 5 of 13</span><span>Nonprofit Fundamentals</span></div>
+    <div class="progress-bar-bg"><div class="progress-bar-fill"></div></div>
+  </div>
+
+  <div class="content-card">
+    <div class="content-card-header">
+      <h2>Module 5: Nonprofit Fundamentals</h2>
+      <p>Understand the structure, mission, and principles that drive Path to College.</p>
+    </div>
+    <div class="content-card-body">
+      <p class="intro-text">This module provides a comprehensive understanding of the fundamentals of working in a nonprofit organization. You'll gain insight into the unique structure, mission-driven focus, and operational principles that set nonprofits apart. By the end of this module, you will have a solid grasp of the core elements that contribute to the success of a nonprofit and your role in supporting Path to College's mission.</p>
+
+      <!-- Understanding Nonprofits -->
+      <div class="section-block">
+        <h3>Understanding Nonprofits</h3>
+        <h4>What is a Nonprofit?</h4>
+        <div class="info-card">
+          <p>A nonprofit organization is an entity established to serve a public interest other than generating profit for owners or investors. Unlike for-profit businesses, nonprofits reinvest their revenue to further their mission and serve their community.</p>
+        </div>
+        <h4>Types of Nonprofits</h4>
+        <p>Nonprofits in the U.S. fall under various classifications, with <strong>501(c)(3)</strong> being the most common. These organizations are tax-exempt and focus on areas that benefit society. <strong>Path to College is a 501(c)(3) nonprofit</strong> that works in the youth and education sectors, supporting high school students to achieve academic and personal success.</p>
+        <h4>Nonprofit Funding</h4>
+        <p>Nonprofits are primarily funded through a combination of individual donations, grants, sponsorships, and events. All revenue is reinvested into programs and services that align with the mission. At Path to College, fundraising is critical to sustaining our programs and creating lasting impact.</p>
+        <p><strong>Examples of fundraising at Path to College:</strong></p>
+        <div class="funding-grid">
+          <div class="funding-tag">Individual Donations</div>
+          <div class="funding-tag">Corporate Donations</div>
+          <div class="funding-tag">Foundation Grants</div>
+          <div class="funding-tag">Fundraising Events<br><small style="color:#888">(e.g. Shine &amp; Dine Gala)</small></div>
+          <div class="funding-tag">Ticketed Events<br><small style="color:#888">(e.g. Master Path Series)</small></div>
+          <div class="funding-tag">Online Campaigns<br><small style="color:#888">(e.g. Light the Path)</small></div>
+        </div>
+      </div>
+
+      <!-- Mission -->
+      <div class="section-block">
+        <h3>The Nonprofit Mission</h3>
+        <h4>Mission &amp; Vision</h4>
+        <div class="mission-recap">
+          <div class="mission-item"><div class="label">Mission</div><p>Expand minds and ignite potential.</p></div>
+          <div class="mission-item"><div class="label">Vision</div><p>We envision a world where genius, leadership, and excellence are cultivated in the most overlooked students in our community.</p></div>
+        </div>
+        <h4>Connecting Your Work to the Mission</h4>
+        <p>Every role within a nonprofit is essential to fulfilling the organization's mission. At Path to College, whether you are working directly with students, engaging with donors, or managing operational tasks, your contributions directly impact the success of our programs and the students we serve.</p>
+        <div class="activity-box">
+          <div class="activity-icon">💡</div>
+          <div class="activity-content">
+            <p><strong>Activity:</strong> Review Path to College's three-year Strategic Plan to familiarize yourself with our long-term goals and envision how your role will play a part in accomplishing them.</p>
+            <a class="activity-btn" href="https://static1.squarespace.com/static/6250913633cae76c17cd08e5/t/640b8e28835c180de89e6a87/1725569604605/Path+to+College+23-26+Strategic+Plan.pdf" target="_blank">Read the Strategic Plan &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Governance -->
+      <div class="section-block">
+        <h3>Nonprofit Governance</h3>
+        <h4>The Board of Directors</h4>
+        <p>The board of directors serves as the governing body of a nonprofit, providing oversight and strategic direction. At Path to College, our board ensures we remain mission-focused, compliant with regulations, and financially sustainable. The board also plays a key role in fundraising and advocating for our mission.</p>
+        <div class="activity-box">
+          <div class="activity-icon">💡</div>
+          <div class="activity-content">
+            <p><strong>Activity:</strong> Get to know the Path to College Board of Directors.</p>
+            <a class="activity-btn" href="https://www.canva.com/design/DAGcNKyqXPc/vZf3ZmydCnGX7hBmRAP82A/view?utm_content=DAGcNKyqXPc&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h443893e37f" target="_blank">Meet the Board &rarr;</a>
+          </div>
+        </div>
+        <h4>Leadership &amp; Management</h4>
+        <p>Nonprofit leadership combines mission-driven strategy with effective management. At Path to College, our CEO collaborates closely with the board and community to guide the organization's growth, while the team executes day-to-day operations to bring our mission to life.</p>
+      </div>
+
+      <!-- Compliance -->
+      <div class="section-block">
+        <h3>Compliance &amp; Ethics</h3>
+        <h4>Legal &amp; Regulatory Requirements</h4>
+        <p>Nonprofits must adhere to specific legal and regulatory standards to maintain their tax-exempt status. This includes filing the annual Form 990, conducting audits, and following state and federal laws. Path to College prioritizes compliance to ensure we operate with integrity and transparency.</p>
+        <h4>Transparency &amp; Accountability</h4>
+        <p>Transparency builds trust with our donors, partners, and the community. At Path to College, we maintain detailed financial records and provide regular updates on our impact.</p>
+        <div class="accred-badge">
+          <div class="icon">🏅</div>
+          <p><strong>Path to College is proud to be an accredited organization</strong> at the Excellence in Nonprofit Management level by <strong>Nonprofits First.</strong></p>
+        </div>
+      </div>
+
+      <!-- Community -->
+      <div class="section-block">
+        <h3>Engaging Our Community</h3>
+        <h4>Building Relationships</h4>
+        <p>Collaboration is at the heart of nonprofit success. Path to College fosters strong relationships with donors, mentors, volunteers, community partners, and students. Effective communication, gratitude, and responsiveness are key to maintaining these partnerships.</p>
+        <h4>Advocacy &amp; Outreach</h4>
+        <p>Nonprofits play a vital role in raising awareness and driving change. Path to College engages in outreach activities, shares success stories, and highlights the importance of education equity to inspire support and action from the community.</p>
+        <div class="activity-box">
+          <div class="activity-icon">🎤</div>
+          <div class="activity-content">
+            <p><strong>Activity:</strong> An incredible example of Path to College's advocacy and outreach efforts is <strong>Christine Sylvain's 2024 TEDxUF Talk!</strong></p>
+            <a class="activity-btn" href="https://youtu.be/iCGfrNh2AKA?si=z6cD35Awk7zHTfHS" target="_blank">Watch TEDxUF Talk &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Measuring Impact -->
+      <div class="section-block">
+        <h3>Measuring Impact</h3>
+        <h4>Defining Success in a Nonprofit Context</h4>
+        <p>Success in a nonprofit is measured by its ability to create meaningful impact, not just financial performance. Path to College tracks outcomes such as student enrollment in college, scholarship awards, and personal growth. These results reflect our mission in action.</p>
+        <div class="activity-box">
+          <div class="activity-icon">💡</div>
+          <div class="activity-content">
+            <p><strong>Activity:</strong> Earlier in this module, you read through Path to College's Strategic Plan. Let's expand on this!</p>
+            <a class="activity-btn" href="https://docs.google.com/forms/d/1AZyIIarJQNP-GCrv-GTTjckhJx0NX6x0T0U1hZHCWzI/preview" target="_blank">Complete the Activity &rarr;</a>
+          </div>
+        </div>
+        <h4>Celebrating Wins!</h4>
+        <p>Recognizing and celebrating achievements is vital to maintaining momentum. At Path to College, we share success stories with our team, donors, and community on a regular basis to inspire continued support and reinforce the value of our work.</p>
+      </div>
+
+      <div class="closing-msg">
+        Like us here at Path to College, nonprofits play a vital role in addressing societal challenges and driving change. By understanding the fundamentals of nonprofit operations, governance, and impact, you are better equipped to contribute to our mission of <strong>expanding minds and igniting potential.</strong> Together, we can continue making a lasting difference in the lives of the students we serve!
+      </div>
+
+      <!-- Next Steps -->
+      <div class="section-block" style="margin-top:24px;">
+        <h3>Next Steps</h3>
+        <ul>
+          <li>Begin <strong>Module 6: Team Integration</strong> to learn more about how we maintain a cohesive and high-performing team.</li>
+          <li>Reach out to your Manager if you have any questions along the way.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="ack-box">
+    <h3>Ready to Sign Your Acknowledgment?</h3>
+    <p>Once you have reviewed all content and completed all 💡 activities on this page, return to BambooHR to sign your Module 5 acknowledgment.</p>
+    <div class="ack-steps">
+      <div class="ack-step"><div class="step-num">1</div><span>Complete all activities, including the Strategic Plan review and TEDxUF Talk.</span></div>
+      <div class="ack-step"><div class="step-num">2</div><span>Log in to BambooHR and navigate to your onboarding section.</span></div>
+      <div class="ack-step"><div class="step-num">3</div><span>Sign the Module 5 acknowledgment to confirm completion.</span></div>
+      <div class="ack-step"><div class="step-num">4</div><span>Return here and proceed to Module 6.</span></div>
+    </div>
+    <a class="ack-btn" href="https://pathtocollege.bamboohr.com/home" target="_blank">Go to BambooHR to Sign &rarr;</a>
+  </div>
+
+  <div class="nav-row">
+    <a class="nav-btn nav-btn-outline" href="https://sites.google.com/pathtocollege.org/ptc-onboarding/copy-of-module-4-cc">&larr; Module 4</a>
+    <a class="nav-btn nav-btn-fill" href="https://sites.google.com/pathtocollege.org/ptc-onboarding/copy-of-module-6-cc">Next: Module 6 &rarr;</a>
+  </div>
+</div>
+</body>
+</html>

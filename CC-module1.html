@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 1 – Intro to the Onboarding Program | Path to College</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    color: #222;
+  }
+  .container {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 20px;
+  }
+
+  /* ── Header (matches homepage) ── */
+  .header {
+    background: white;
+    padding: 35px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    margin-bottom: 10px;
+    border-top: 6px solid #c8102e;
+  }
+  .header h1 {
+    margin: 0;
+    font-size: 32px;
+    color: #c8102e;
+  }
+  .header p {
+    margin-top: 10px;
+    font-size: 17px;
+    color: #555;
+  }
+
+  /* ── Breadcrumb ── */
+  .breadcrumb {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 25px;
+    padding: 0 4px;
+  }
+  .breadcrumb a {
+    color: #c8102e;
+    text-decoration: none;
+  }
+  .breadcrumb a:hover { text-decoration: underline; }
+
+  /* ── Progress bar ── */
+  .progress-wrap {
+    background: white;
+    border-radius: 12px;
+    padding: 20px 25px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    margin-bottom: 25px;
+  }
+  .progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 8px;
+  }
+  .progress-label span { font-weight: bold; color: #c8102e; }
+  .progress-bar-bg {
+    background: #f0f0f0;
+    border-radius: 50px;
+    height: 10px;
+    overflow: hidden;
+  }
+  .progress-bar-fill {
+    background: #c8102e;
+    height: 100%;
+    width: 10.6%;
+    border-radius: 50px;
+    transition: width 0.4s ease;
+  }
+
+  /* ── Content card ── */
+  .content-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+    margin-bottom: 25px;
+  }
+  .content-card-header {
+    background: #c8102e;
+    color: white;
+    padding: 20px 30px;
+  }
+  .content-card-header h2 {
+    margin: 0;
+    font-size: 20px;
+  }
+  .content-card-header p {
+    margin: 6px 0 0;
+    font-size: 14px;
+    opacity: 0.85;
+  }
+  .content-card-body {
+    padding: 30px;
+  }
+
+  /* ── Welcome banner ── */
+  .welcome-banner {
+    background: #fff5f5;
+    border-left: 4px solid #c8102e;
+    border-radius: 0 8px 8px 0;
+    padding: 18px 22px;
+    margin-bottom: 28px;
+    font-size: 15.5px;
+    line-height: 1.7;
+    color: #333;
+  }
+  .welcome-banner strong { color: #c8102e; }
+
+  /* ── Section blocks ── */
+  .section-block {
+    margin-bottom: 28px;
+  }
+  .section-block h3 {
+    font-size: 16px;
+    color: #c8102e;
+    margin: 0 0 12px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #f0f0f0;
+  }
+  .section-block ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+  .section-block ul li {
+    font-size: 15px;
+    color: #444;
+    margin-bottom: 8px;
+    line-height: 1.6;
+  }
+  .section-block ul li strong {
+    color: #222;
+  }
+
+  /* ── Module overview grid ── */
+  .module-overview-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 4px;
+  }
+  .module-pill {
+    background: #f9f9f9;
+    border: 1.5px solid #e8e8e8;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 14px;
+    color: #444;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .module-pill .num {
+    background: #c8102e;
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .module-pill.current {
+    border-color: #c8102e;
+    background: #fff5f5;
+  }
+  .module-pill.current .label { font-weight: bold; color: #c8102e; }
+
+  /* ── Outcomes grid ── */
+  .outcomes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .outcome-item {
+    background: #f9f9f9;
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 14px;
+    color: #444;
+    line-height: 1.5;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .outcome-item .check {
+    color: #c8102e;
+    font-size: 16px;
+    margin-top: 1px;
+    flex-shrink: 0;
+  }
+
+  /* ── Acknowledgment box ── */
+  .ack-box {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.08);
+    padding: 30px;
+    margin-bottom: 25px;
+    border-top: 4px solid #222;
+  }
+  .ack-box h3 {
+    margin: 0 0 10px;
+    font-size: 17px;
+    color: #222;
+  }
+  .ack-box p {
+    font-size: 14.5px;
+    color: #555;
+    line-height: 1.7;
+    margin: 0 0 20px;
+  }
+  .ack-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 22px;
+  }
+  .ack-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 14px;
+    color: #444;
+  }
+  .ack-step .step-num {
+    background: #222;
+    color: white;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .ack-btn {
+    display: inline-block;
+    background: #c8102e;
+    color: white;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    transition: background 0.2s;
+  }
+  .ack-btn:hover { background: #9e0d23; }
+
+  /* ── Navigation ── */
+  .nav-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+  .nav-btn {
+    display: inline-block;
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.2s;
+  }
+  .nav-btn-outline {
+    border: 2px solid #c8102e;
+    color: #c8102e;
+    background: white;
+  }
+  .nav-btn-outline:hover { background: #fff5f5; }
+  .nav-btn-fill {
+    background: #c8102e;
+    color: white;
+    border: 2px solid #c8102e;
+  }
+  .nav-btn-fill:hover { background: #9e0d23; border-color: #9e0d23; }
+
+  @media(max-width: 600px) {
+    .module-overview-grid,
+    .outcomes-grid { grid-template-columns: 1fr; }
+    .header h1 { font-size: 24px; }
+    .nav-row { flex-direction: column; }
+    .nav-btn { width: 100%; text-align: center; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <h1>Path to College Learning Portal</h1>
+    <p>Employee Onboarding Program &mdash; Office of Operations</p>
+  </div>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <a href="#">Home</a> &rsaquo; Module 1: Introduction to the Onboarding Program
+  </div>
+
+  <!-- Progress bar -->
+  <div class="progress-wrap">
+    <div class="progress-label">
+      <span>Module 1 of 13</span>
+      <span>Introduction to the Onboarding Program</span>
+    </div>
+    <div class="progress-bar-bg">
+      <div class="progress-bar-fill"></div>
+    </div>
+  </div>
+
+  <!-- Main content card -->
+  <div class="content-card">
+    <div class="content-card-header">
+      <h2>Module 1: Introduction to the Onboarding Program</h2>
+      <p>Start here &mdash; learn what to expect and how to navigate your onboarding journey.</p>
+    </div>
+    <div class="content-card-body">
+
+      <!-- Welcome -->
+      <div class="welcome-banner">
+        Hi, and welcome to <strong>Path to College!</strong> We're excited to have you join us as we work together to expand minds and ignite potential. This onboarding experience is designed to help you transition smoothly into your role, understand our mission, and feel equipped to succeed. Let's explore what you can expect!
+      </div>
+
+      <!-- Purpose -->
+      <div class="section-block">
+        <h3>Purpose of the Onboarding Program</h3>
+        <ul>
+          <li>Provide you with a clear understanding of our <strong>mission, values, and goals.</strong></li>
+          <li>Familiarize you with key <strong>policies, procedures, technology, and tools.</strong></li>
+          <li>Equip you with the knowledge and skills needed to <strong>thrive in your role.</strong></li>
+          <li>Help you <strong>integrate into our team</strong> and organizational culture.</li>
+        </ul>
+      </div>
+
+      <!-- Module overview -->
+      <div class="section-block">
+        <h3>Overview of Modules</h3>
+        <div class="module-overview-grid">
+          <div class="module-pill current">
+            <div class="num">1</div>
+            <span class="label">Introduction to the Onboarding Program</span>
+          </div>
+          <div class="module-pill">
+            <div class="num">2</div>
+            <span>Welcome &amp; Introduction</span>
+          </div>
+          <div class="module-pill">
+            <div class="num">3</div>
+            <span>Policies &amp; Procedures</span>
+          </div>
+          <div class="module-pill">
+            <div class="num">4</div>
+            <span>Tech & Tools</span>
+          </div>
+          <div class="module-pill">
+            <div class="num">5</div>
+            <span>Nonprofit Fundamentals</span>
+          </div>
+          <div class="module-pill">
+            <div class="num">6</div>
+            <span>Company Culture</span>
+          </div>
+          <div class="module-pill">
+            <div class="num">7</div>
+            <span>Florida Professionally Mandated Reporter</span>
+          </div>
+          <div class="module-pill">
+            <div class="num">8</div>
+            <span>ESET Cybersecurity Awareness Training</span>
+          </div>
+          <div class="module-pill">
+            <div class="num">9</div>
+            <span>15-Passenger Van Safety Training</span>
+          </div>
+          <div class="module-pill">
+            <div class="num">10</div>
+            <span>Disaster Preparedness & Continuity Policy</span>
+          </div>
+          <div class="module-pill">
+            <div class="num">11</div>
+            <span>The Phone Call That Breached the Company</span>
+          </div>
+          <div class="module-pill">
+            <div class="num">12</div>
+            <span>Phishing Awareness</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- How to navigate -->
+      <div class="section-block">
+        <h3>How to Navigate the Onboarding Program</h3>
+        <ul>
+          <li>Each module is <strong>self-guided</strong> and designed to be completed at your own pace.</li>
+          <li>Activities and quizzes are included to <strong>reinforce learning.</strong></li>
+          <li>Keep a notebook or document handy to <strong>jot down questions</strong> for your manager or team.</li>
+        </ul>
+      </div>
+
+      <!-- Expected outcomes -->
+      <div class="section-block">
+        <h3>Expected Outcomes</h3>
+        <div class="outcomes-grid">
+          <div class="outcome-item">
+            <span class="check">&#10003;</span>
+            <span>Understand how your role contributes to our mission.</span>
+          </div>
+          <div class="outcome-item">
+            <span class="check">&#10003;</span>
+            <span>Feel confident navigating our systems and tools.</span>
+          </div>
+          <div class="outcome-item">
+            <span class="check">&#10003;</span>
+            <span>Be familiar with our team and organizational culture.</span>
+          </div>
+          <div class="outcome-item">
+            <span class="check">&#10003;</span>
+            <span>Be ready to start making an impact in your role.</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Acknowledgment box -->
+  <div class="ack-box">
+    <h3>Ready to Sign Your Acknowledgment?</h3>
+    <p>Once you have fully reviewed all of the content on this page, return to BambooHR to sign your Module 1 acknowledgment. Your electronic signature certifies that you have read and understood everything presented in this module.</p>
+    <div class="ack-steps">
+      <div class="ack-step">
+        <div class="step-num">1</div>
+        <span>Review all content on this page in full.</span>
+      </div>
+      <div class="ack-step">
+        <div class="step-num">2</div>
+        <span>Log in to BambooHR and navigate to your onboarding section.</span>
+      </div>
+      <div class="ack-step">
+        <div class="step-num">3</div>
+        <span>Sign the Module 1 acknowledgment to confirm completion.</span>
+      </div>
+      <div class="ack-step">
+        <div class="step-num">4</div>
+        <span>Return here and proceed to Module 2.</span>
+      </div>
+    </div>
+    <a class="ack-btn" href="https://pathtocollege.bamboohr.com/home" target="_blank">Go to BambooHR to Sign &rarr;</a>
+  </div>
+
+  <!-- Bottom nav -->
+  <div class="nav-row">
+    <a class="nav-btn nav-btn-outline" href="https://sites.google.com/pathtocollege.org/ptc-onboarding/module-pages-cc">&larr; Back to All Modules</a>
+    <a class="nav-btn nav-btn-fill" href="https://sites.google.com/pathtocollege.org/ptc-onboarding/copy-of-module-2-cc">Next: Module 2 &rarr;</a>
+  </div>
+
+</div>
+</body>
+</html>
