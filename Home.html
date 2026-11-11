@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Path to College | Dashboard</title>
+    <style>
+        :root {
+            --red: #cf0115;
+            --dark-red: #7a000b;
+            --white: #ffffff;
+            --ink: #1a1a1a;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background-color: var(--red);
+            font-family: "Arial Rounded MT Bold", "Arial Black", Arial, sans-serif;
+            color: var(--white);
+            text-align: center;
+            padding: 80px 20px;
+            overflow-x: hidden;
+        }
+
+        /* big soft circles in the background */
+        body::before,
+        body::after {
+            content: "";
+            position: fixed;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.08);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        body::before {
+            width: 500px;
+            height: 500px;
+            top: -160px;
+            right: -140px;
+        }
+
+        body::after {
+            width: 380px;
+            height: 380px;
+            bottom: -140px;
+            left: -120px;
+        }
+
+        .page {
+            position: relative;
+            z-index: 1;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        .brand {
+            display: inline-block;
+            background-color: var(--white);
+            color: var(--red);
+            padding: 8px 22px;
+            border-radius: 999px;
+            font-size: 16px;
+            transform: rotate(-3deg);
+            box-shadow: 4px 4px 0 var(--dark-red);
+        }
+
+        h1 {
+            font-size: 52px;
+            line-height: 1.05;
+            margin: 24px 0 40px;
+            text-shadow: 4px 4px 0 var(--dark-red);
+        }
+
+        .holders {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .holders button {
+            font-family: inherit;
+            font-size: 20px;
+            color: var(--white);
+            background-color: var(--red);
+            border: 4px solid var(--white);
+            border-radius: 20px;
+            padding: 20px 34px;
+            cursor: pointer;
+            box-shadow: 6px 6px 0 var(--dark-red);
+            transition: transform 0.1s, box-shadow 0.1s;
+        }
+
+        .holders button:hover {
+            background-color: var(--white);
+            color: var(--red);
+            transform: translate(-2px, -2px);
+            box-shadow: 8px 8px 0 var(--dark-red);
+        }
+
+        .holders button:active {
+            transform: translate(4px, 4px);
+            box-shadow: 2px 2px 0 var(--dark-red);
+        }
+
+        button:focus-visible {
+            outline: 4px solid var(--ink);
+            outline-offset: 3px;
+        }
+
+        @media (max-width: 560px) {
+            h1 { font-size: 36px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * { transition: none !important; }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <span class="brand">Path to College</span>
+    <h1 class="title">Welcome To Your Dashboard</h1>
+
+    <div class="holders">
+        <div class="training">
+            <button class="Tr">Training Modules</button>
+        </div>
+        <div class="resources">
+            <button class="Tr1">Resources</button>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    /* ---------- PASTE YOUR PAGE LINKS HERE ---------- */
+    /* Put each link between the quotes. */
+    const TRAINING_LINK = "";
+    const RESOURCES_LINK = "";
+
+    const trainingButton = document.querySelector(".Tr");
+    const resourcesButton = document.querySelector(".Tr1");
+
+    trainingButton.addEventListener("click", function () {
+        if (TRAINING_LINK !== "") {
+            window.open(TRAINING_LINK, "_blank");
+        }
+    });
+
+    resourcesButton.addEventListener("click", function () {
+        if (RESOURCES_LINK !== "") {
+            window.open(RESOURCES_LINK, "_blank");
+        }
+    });
+</script>
+</body>
+</html>
